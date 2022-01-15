@@ -1,5 +1,6 @@
 package com.example.taskshabits
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -14,6 +15,8 @@ class MainActivity : AppCompatActivity() {
         catHabitsBtn.setOnClickListener {
             val toast = Toast.makeText(this, "ButtonClicked", Toast.LENGTH_SHORT)
             toast.show()
+            val intent = Intent(this, HabitsActivity::class.java)
+            startActivity(intent)
         }
     }
 }
