@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="14dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Linear Layout for the close/cross button -->
+    <LinearLayout
+        android:id="@+id/ll_Habits_dialog_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/btn_habit_dialog_close"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@null"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            android:contentDescription="Cross/Close/Clear Cross ImageButton" />
+
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:id="@+id/ll_habit_dialog_main"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:src="@android:drawable/star_big_on"/>
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:gravity="center"
+                android:text="Workout"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:gravity="center"
+            android:text="10days Left"
+            android:textSize="20sp"/>
+
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:progress="48"/>
+
+        <Button
+            android:id="@+id/btn_habit_dialog_done"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Done 😎"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/tv_habit_dialog_done"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:text="Completed already, See You Tomorrow!! 👋🏼 "
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

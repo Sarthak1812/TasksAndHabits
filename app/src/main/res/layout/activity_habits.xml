@@ -39,14 +39,16 @@
         android:layout_alignParentEnd="true"
         android:layout_below="@id/tv_desc_habits"
         android:layout_margin="12dp"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cv_habits"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardCornerRadius="8dp"
-            app:cardElevation="12dp">
+            app:cardElevation="12dp"
+            android:clickable="true"
+            android:focusable="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
