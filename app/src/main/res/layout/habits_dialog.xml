@@ -66,22 +66,34 @@
             style="@style/Widget.AppCompat.ProgressBar.Horizontal"
             android:progress="48"/>
 
-        <Button
-            android:id="@+id/btn_habit_dialog_done"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Done 😎"
-            android:visibility="gone"/>
 
-        <TextView
-            android:id="@+id/tv_habit_dialog_done"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/ll_habit_done_container"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:text="Completed already, See You Tomorrow!! 👋🏼 "
-            android:visibility="gone"/>
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_habit_dialog_done"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Done 😎"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/tv_habit_dialog_done"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:text="Completed already, See You Tomorrow!! 👋🏼 "
+                android:visibility="gone"/>
+
+        </LinearLayout>
+
+
 
     </LinearLayout>
 

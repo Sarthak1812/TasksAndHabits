@@ -2,12 +2,10 @@ package com.example.taskshabits
 
 import android.app.Dialog
 import android.os.Bundle
+import android.transition.TransitionManager
 import android.view.View
 import android.view.Window
-import android.widget.Button
-import android.widget.ImageButton
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -34,7 +32,7 @@ class HabitsActivity : AppCompatActivity() {
         habitsAdapter.setOnHabitsItemClickListener(object : HabitsAdapter.onHabitsItemClickListener{
             override fun onHabitsItemClick(position: Int) {
                 Toast.makeText(this@HabitsActivity, "clicked", Toast.LENGTH_SHORT).show()
-                habitDialogCall()
+                habitsDialogCall()
             }
 
         })
@@ -43,35 +41,37 @@ class HabitsActivity : AppCompatActivity() {
 
     }
 
-    fun habitDialogCall(){
+    fun habitsDialogCall(){
         //row/card onClick listener
         // creating dialog
-        val habitDialog = Dialog(this)
-        habitDialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
-        habitDialog.setCancelable(false)
-        habitDialog.setContentView(R.layout.habits_dialog)
+        val habitsDialog = Dialog(this)
+        habitsDialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        habitsDialog.setCancelable(false)
+        habitsDialog.setContentView(R.layout.habits_dialog)
 
         // init
-        val doneDialogBtn = habitDialog.findViewById<Button>(R.id.btn_habit_dialog_done)
-        val doneDialogTV = habitDialog.findViewById<TextView>(R.id.tv_habit_dialog_done)
-        val closeDialogBtn = habitDialog.findViewById<ImageButton>(R.id.btn_habit_dialog_close)
+        val doneDialogBtn = habitsDialog.findViewById<Button>(R.id.btn_habit_dialog_done)
+        val doneDialogTV = habitsDialog.findViewById<TextView>(R.id.tv_habit_dialog_done)
+        val doneContainerLL = habitsDialog.findViewById<LinearLayout>(R.id.ll_habit_done_container)
+        val closeDialogBtn = habitsDialog.findViewById<ImageButton>(R.id.btn_habit_dialog_close)
 
         // changing/replacing the DoneBtn onClick with DoneTextView
         doneDialogBtn.visibility = View.VISIBLE
         doneDialogTV.visibility = View.GONE
         doneDialogBtn.setOnClickListener {
+            TransitionManager.beginDelayedTransition(doneContainerLL)
             doneDialogTV.visibility = View.VISIBLE
             doneDialogBtn.visibility = View.GONE
         }
 
         // onClick - Close ImageButton
         closeDialogBtn.setOnClickListener {
-            habitDialog.dismiss()
+            habitsDialog.dismiss()
             Toast.makeText(this, "Closed", Toast.LENGTH_SHORT).show()
         }
 
         // show dialog
-        habitDialog.show()
+        habitsDialog.show()
     }
 
 
