@@ -5,17 +5,20 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 
-class HabitsAdapter(private val mHabitsList: List<HabitsItemViewModel>) :RecyclerView.Adapter<HabitsAdapter.ViewHolder>(){
+class HabitsAdapter :RecyclerView.Adapter<HabitsAdapter.ViewHolder>(){
 
-    private lateinit var mHabitsItemClickListener: onHabitsItemClickListener
+    private var mHabitsList = emptyList<Habits>()
 
-    interface onHabitsItemClickListener {
+    private lateinit var mHabitsItemClickListener: OnHabitsItemClickListener
+
+    interface OnHabitsItemClickListener {
         fun onHabitsItemClick(position: Int)
     }
 
-    fun setOnHabitsItemClickListener(listener: onHabitsItemClickListener){
+    fun setOnHabitsItemClickListener(listener: OnHabitsItemClickListener){
         mHabitsItemClickListener = listener
     }
 
@@ -37,8 +40,18 @@ class HabitsAdapter(private val mHabitsList: List<HabitsItemViewModel>) :Recycle
         return mHabitsList.size
     }
 
+
+    fun setHabits(newHabitsList : List<Habits>) {
+        val diffUtil = HabitsCallback(mHabitsList, newHabitsList)
+        val diffResult = DiffUtil.calculateDiff(diffUtil)
+        mHabitsList = newHabitsList
+        diffResult.dispatchUpdatesTo(this)
+
+    }
+
+
     // Holds the views for adding it to image and text
-    class ViewHolder(ItemView: View, listener: onHabitsItemClickListener) : RecyclerView.ViewHolder(ItemView) {
+    class ViewHolder(ItemView: View, listener: OnHabitsItemClickListener) : RecyclerView.ViewHolder(ItemView) {
         val habitsTitle: TextView = itemView.findViewById(R.id.tv_habits_card_title)
         val habitsDaysCount: TextView = itemView.findViewById(R.id.tv_habits_card_day_count)
         val habitsImage: ImageView = itemView.findViewById(R.id.iv_habits_card)

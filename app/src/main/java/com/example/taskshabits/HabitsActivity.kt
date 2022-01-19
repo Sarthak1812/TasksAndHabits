@@ -9,6 +9,7 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class HabitsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,24 +19,34 @@ class HabitsActivity : AppCompatActivity() {
         val habitsRV = findViewById<RecyclerView>(R.id.rv_habits)
         habitsRV.layoutManager = LinearLayoutManager(this)
 
+        val addHabitBtn = findViewById<FloatingActionButton>(R.id.fab_habits_add)
+
         // sample data
-        val sampleData = ArrayList<HabitsItemViewModel>()
+        val sampleData = ArrayList<Habits>()
 
-        for (i in 1..5){
-            sampleData.add(HabitsItemViewModel("WORKOUT", "10 days left", android.R.drawable.star_big_on))
-        }
+        sampleData.add(Habits(1, "WORKOUT", "10 days left", android.R.drawable.star_big_on))
+        sampleData.add(Habits(2, "WORKOUT", "10 days left", android.R.drawable.star_big_on))
+        sampleData.add(Habits(3, "WORKOUT", "10 days left", android.R.drawable.star_big_on))
 
-        val habitsAdapter = HabitsAdapter(sampleData)
+        val habitsAdapter = HabitsAdapter()
+        habitsAdapter.setHabits(sampleData)
         habitsRV.adapter = habitsAdapter
 
         // habits card item onClick listener
-        habitsAdapter.setOnHabitsItemClickListener(object : HabitsAdapter.onHabitsItemClickListener{
+        habitsAdapter.setOnHabitsItemClickListener(object : HabitsAdapter.OnHabitsItemClickListener{
             override fun onHabitsItemClick(position: Int) {
                 Toast.makeText(this@HabitsActivity, "clicked", Toast.LENGTH_SHORT).show()
                 habitsDialogCall()
             }
 
         })
+
+        addHabitBtn.setOnClickListener {
+            sampleData.add(Habits(4,"WORKOUT", "10 days left", android.R.drawable.star_big_on))
+            habitsAdapter.setHabits(sampleData)
+            Toast.makeText(this, "clicked fab", Toast.LENGTH_SHORT).show()
+        }
+
 
 
 
