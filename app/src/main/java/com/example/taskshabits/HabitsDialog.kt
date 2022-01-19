@@ -1,29 +1,27 @@
 package com.example.taskshabits
 
-import android.app.Dialog
-import android.content.Context
 import android.os.Bundle
 import android.transition.TransitionManager
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.view.Window
 import android.widget.*
+import androidx.fragment.app.DialogFragment
 
-class HabitsDialog(context: Context) : Dialog(context) {
+class HabitsDialog: DialogFragment() {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        var rootView = inflater.inflate(R.layout.habits_dialog, container, false)
 
-    init {
-        setCancelable(false)
-    }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        requestWindowFeature(Window.FEATURE_NO_TITLE)
-        setContentView(R.layout.habits_dialog)
-
-        // init
-        val doneDialogBtn = findViewById<Button>(R.id.btn_habit_dialog_done)
-        val doneDialogTV = findViewById<TextView>(R.id.tv_habit_dialog_done)
-        val doneContainerLL = findViewById<LinearLayout>(R.id.ll_habit_done_container)
-        val closeDialogBtn = findViewById<ImageButton>(R.id.btn_habit_dialog_close)
+        val doneDialogBtn = rootView.findViewById<Button>(R.id.btn_habit_dialog_done)
+        val doneDialogTV = rootView.findViewById<TextView>(R.id.tv_habit_dialog_done)
+        val doneContainerLL = rootView.findViewById<LinearLayout>(R.id.ll_habit_done_container)
+        val closeDialogBtn = rootView.findViewById<ImageButton>(R.id.btn_habit_dialog_close)
 
         // changing/replacing the DoneBtn onClick with DoneTextView
         doneDialogBtn.visibility = View.VISIBLE
@@ -40,6 +38,9 @@ class HabitsDialog(context: Context) : Dialog(context) {
             Toast.makeText(context, "Closed", Toast.LENGTH_SHORT).show()
         }
 
-        // show dialog
+
+
+        return rootView
     }
+
 }

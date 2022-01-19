@@ -35,7 +35,7 @@ class HabitsActivity : AppCompatActivity() {
         // habits card item onClick listener
         habitsAdapter.setOnHabitsItemClickListener(object : HabitsAdapter.OnHabitsItemClickListener{
             override fun onHabitsItemClick(position: Int) {
-                HabitsDialog(this@HabitsActivity).show()
+                habitsDialogCall()
             }
 
         })
@@ -50,39 +50,15 @@ class HabitsActivity : AppCompatActivity() {
 
 
     }
-/*
+
     fun habitsDialogCall(){
-        //row/card onClick listener
-        // creating dialog
-        val habitsDialog = Dialog(this)
-        habitsDialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
-        habitsDialog.setCancelable(false)
-        habitsDialog.setContentView(R.layout.habits_dialog)
 
-        // init
-        val doneDialogBtn = habitsDialog.findViewById<Button>(R.id.btn_habit_dialog_done)
-        val doneDialogTV = habitsDialog.findViewById<TextView>(R.id.tv_habit_dialog_done)
-        val doneContainerLL = habitsDialog.findViewById<LinearLayout>(R.id.ll_habit_done_container)
-        val closeDialogBtn = habitsDialog.findViewById<ImageButton>(R.id.btn_habit_dialog_close)
+        val habitsDialog = HabitsDialog()
 
-        // changing/replacing the DoneBtn onClick with DoneTextView
-        doneDialogBtn.visibility = View.VISIBLE
-        doneDialogTV.visibility = View.GONE
-        doneDialogBtn.setOnClickListener {
-            TransitionManager.beginDelayedTransition(doneContainerLL)
-            doneDialogTV.visibility = View.VISIBLE
-            doneDialogBtn.visibility = View.GONE
-        }
-
-        // onClick - Close ImageButton
-        closeDialogBtn.setOnClickListener {
-            habitsDialog.dismiss()
-            Toast.makeText(this, "Closed", Toast.LENGTH_SHORT).show()
-        }
 
         // show dialog
-        habitsDialog.show()
+        habitsDialog.show(supportFragmentManager, "Dialog")
     }
-*/
+
 
 }
