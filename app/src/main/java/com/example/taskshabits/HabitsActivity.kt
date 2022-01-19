@@ -1,10 +1,6 @@
 package com.example.taskshabits
 
-import android.app.Dialog
 import android.os.Bundle
-import android.transition.TransitionManager
-import android.view.View
-import android.view.Window
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
@@ -45,7 +41,8 @@ class HabitsActivity : AppCompatActivity() {
         // habits card item onClick listener
         habitsAdapter.setOnHabitsItemClickListener(object : HabitsAdapter.OnHabitsItemClickListener{
             override fun onHabitsItemClick(position: Int) {
-                HabitsDialogClass(this@HabitsActivity).show()
+                val habitsDialogFragment = HabitsDialogFragment()
+                habitsDialogFragment.show(supportFragmentManager, "Dialog")
             }
         })
 
