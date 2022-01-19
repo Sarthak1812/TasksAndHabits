@@ -1,9 +1,13 @@
 package com.example.taskshabits
 
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "table_habits")
 data class Habits(
-    //make id autoincrement
-    val id: Int,
-    val cardTitle: String,
-    val cardDaysCount: String,
-    val cardImage: Int
+    @PrimaryKey(autoGenerate = true) val id: Int,
+    @ColumnInfo(name = "TITLE") val cardTitle: String,
+    @ColumnInfo(name = "DAYS_COUNT") val cardDaysCount: String,
+    @ColumnInfo(name = "IMAGE") val cardImage: Int
 )
