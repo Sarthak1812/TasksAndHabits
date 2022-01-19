@@ -35,8 +35,7 @@ class HabitsActivity : AppCompatActivity() {
         // habits card item onClick listener
         habitsAdapter.setOnHabitsItemClickListener(object : HabitsAdapter.OnHabitsItemClickListener{
             override fun onHabitsItemClick(position: Int) {
-                Toast.makeText(this@HabitsActivity, "clicked", Toast.LENGTH_SHORT).show()
-                habitsDialogCall()
+                HabitsDialog(this@HabitsActivity).show()
             }
 
         })
@@ -51,7 +50,7 @@ class HabitsActivity : AppCompatActivity() {
 
 
     }
-
+/*
     fun habitsDialogCall(){
         //row/card onClick listener
         // creating dialog
@@ -84,6 +83,6 @@ class HabitsActivity : AppCompatActivity() {
         // show dialog
         habitsDialog.show()
     }
-
+*/
 
 }
