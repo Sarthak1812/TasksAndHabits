@@ -43,21 +43,25 @@
             android:layout_margin="10dp"
             android:src="@android:drawable/star_big_on"/>
 
-        <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:gravity="center"
-                android:text="Workout"
-                android:textSize="26sp"
-                android:textStyle="bold" />
+        <EditText
+            android:id="@+id/et_habits_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:gravity="center"
+            android:hint="title"
+            android:text=""
+            android:textSize="26sp"
+            android:textStyle="bold" />
 
-        <TextView
+        <EditText
+            android:id="@+id/et_habits_days_count"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             android:gravity="center"
-            android:text="10days Left"
+            android:hint="days count"
+            android:text=""
             android:textSize="20sp"/>
 
         <ProgressBar
