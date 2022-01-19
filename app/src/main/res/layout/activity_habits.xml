@@ -57,7 +57,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_margin="20dp"
-        android:src="@android:drawable/ic_input_add"
+        android:src="@drawable/ic_baseline_add_24"
         android:contentDescription="Add new habit" />
 
 

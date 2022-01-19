@@ -13,5 +13,5 @@ interface HabitsDao {
     suspend fun addHabit(habits: Habits)
 
     @Query("SELECT * FROM table_habits ORDER BY id ASC")
-    suspend fun readAllHabits() : LiveData<List<Habits>>
+    fun readAllHabits() : LiveData<List<Habits>>
 }
