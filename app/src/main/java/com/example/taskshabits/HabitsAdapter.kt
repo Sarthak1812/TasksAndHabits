@@ -42,14 +42,11 @@ class HabitsAdapter :RecyclerView.Adapter<HabitsAdapter.ViewHolder>(){
 
 
     fun setHabits(habits : List<Habits>) {
+
+        val diffUtil = HabitsCallback(mHabitsList, habits)
+        val diffResult = DiffUtil.calculateDiff(diffUtil)
         this.mHabitsList = habits
-        notifyDataSetChanged()
-
-
-//        val diffUtil = HabitsCallback(mHabitsList, habits)
-//        val diffResult = DiffUtil.calculateDiff(diffUtil)
-//        mHabitsList = habits
-//        diffResult.dispatchUpdatesTo(this)
+        diffResult.dispatchUpdatesTo(this)
     }
 
 
@@ -68,14 +65,5 @@ class HabitsAdapter :RecyclerView.Adapter<HabitsAdapter.ViewHolder>(){
 
     }
 
-    class HabitsDiffComparator : DiffUtil.ItemCallback<Habits>(){
-        override fun areItemsTheSame(oldItem: Habits, newItem: Habits): Boolean {
-            return oldItem == newItem
-        }
 
-        override fun areContentsTheSame(oldItem: Habits, newItem: Habits): Boolean {
-            return oldItem.id == newItem.id
-        }
-
-    }
 }
