@@ -42,7 +42,6 @@ class HabitsAdapter :RecyclerView.Adapter<HabitsAdapter.ViewHolder>(){
 
 
     fun setHabits(habits : List<Habits>) {
-
         val diffUtil = HabitsCallback(mHabitsList, habits)
         val diffResult = DiffUtil.calculateDiff(diffUtil)
         this.mHabitsList = habits
@@ -62,8 +61,6 @@ class HabitsAdapter :RecyclerView.Adapter<HabitsAdapter.ViewHolder>(){
                 listener.onHabitsItemClick(adapterPosition)
             }
         }
-
     }
-
 
 }
