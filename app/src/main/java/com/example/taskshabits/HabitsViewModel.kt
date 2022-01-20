@@ -2,11 +2,12 @@ package com.example.taskshabits
 
 import android.app.Application
 import androidx.lifecycle.*
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class HabitsViewModel(application: Application):AndroidViewModel(application) {
 
-    private val allHabitsData: LiveData<List<Habits>>
+    val allHabitsData: LiveData<List<Habits>>
     private val repository: HabitsRepository
 
     init {
@@ -15,7 +16,7 @@ class HabitsViewModel(application: Application):AndroidViewModel(application) {
         allHabitsData = repository.readAllHabitsData
     }
 
-    fun addHabit(habits: Habits) = viewModelScope.launch{
+    fun addHabit(habits: Habits) = viewModelScope.launch(Dispatchers.IO){
             repository.addHabitData(habits)
     }
 

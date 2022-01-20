@@ -10,7 +10,7 @@ import androidx.room.Query
 interface HabitsDao {
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun addHabit(habits: Habits)
+    fun addHabit(habits: Habits)
 
     @Query("SELECT * FROM table_habits ORDER BY id ASC")
     fun readAllHabits() : LiveData<List<Habits>>
