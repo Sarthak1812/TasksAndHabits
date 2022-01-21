@@ -26,6 +26,7 @@ class HabitsDialogFragment: DialogFragment(){
         // init
         val titleEt = rootView.findViewById<EditText>(R.id.et_habits_title)
         val daysCountEt = rootView.findViewById<EditText>(R.id.et_habits_days_count)
+        val autoCompleteTagsTv = rootView.findViewById<AutoCompleteTextView>(R.id.autoComplete_tags)
         val doneDialogBtn = rootView.findViewById<Button>(R.id.btn_habit_dialog_done)
         val doneDialogTV = rootView.findViewById<TextView>(R.id.tv_habit_dialog_done)
         val doneContainerLL = rootView.findViewById<LinearLayout>(R.id.ll_habit_done_container)
@@ -33,6 +34,10 @@ class HabitsDialogFragment: DialogFragment(){
 
         mHabitsViewModel = ViewModelProvider(this).get(HabitsViewModel::class.java)
 
+        // Array Adapter using string-array
+        val tags = resources.getStringArray(R.array.habits_tag_array)
+        val tagsArrayAdapter = ArrayAdapter(requireContext(), R.layout.dropdownmenu_item, tags)
+        autoCompleteTagsTv.setAdapter(tagsArrayAdapter)
 
 
         // changing/replacing the DoneBtn onClick with DoneTextView
@@ -61,7 +66,7 @@ class HabitsDialogFragment: DialogFragment(){
         val data1 = Habits(0, "DATA1", "10 days to go", android.R.drawable.star_big_on)
 
         // Add to db
-        mHabitsViewModel.addHabit(data1)
+//        mHabitsViewModel.addHabit(data1)
         Toast.makeText(context, "added", Toast.LENGTH_SHORT).show()
 
 
