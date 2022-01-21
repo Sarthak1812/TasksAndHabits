@@ -3,8 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/My Android Studio Projects/TasksHabits/app/src/main/res/drawable/ic_add_24.xml" value="0.20185185185185187" />
+        <entry key="..\:/My Android Studio Projects/TasksHabits/app/src/main/res/drawable/ic_habits_meditate_yoga.xml" value="0.20185185185185187" />
         <entry key="..\:/My Android Studio Projects/TasksHabits/app/src/main/res/layout/activity_habits.xml" value="0.2484375" />
         <entry key="..\:/My Android Studio Projects/TasksHabits/app/src/main/res/layout/activity_main.xml" value="0.2296195652173913" />
+        <entry key="..\:/My Android Studio Projects/TasksHabits/app/src/main/res/layout/fragment_habits_dialog.xml" value="0.2484375" />
         <entry key="..\:/My Android Studio Projects/TasksHabits/app/src/main/res/layout/habits_dialog.xml" value="0.2484375" />
         <entry key="..\:/My Android Studio Projects/TasksHabits/app/src/main/res/layout/layout_card_habits.xml" value="0.2484375" />
         <entry key="..\:/My Android Studio Projects/TasksHabits/app/src/main/res/layout/layout_card_harbits.xml" value="0.2484375" />

@@ -1,7 +1,10 @@
-package com.example.taskshabits
+package com.example.taskshabits.util
 
 import android.app.Application
 import androidx.lifecycle.*
+import com.example.taskshabits.data.Habits
+import com.example.taskshabits.data.HabitsDatabase
+import com.example.taskshabits.data.HabitsRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

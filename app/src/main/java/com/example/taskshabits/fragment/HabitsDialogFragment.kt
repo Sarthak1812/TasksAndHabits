@@ -1,4 +1,4 @@
-package com.example.taskshabits
+package com.example.taskshabits.fragment
 
 import android.os.Bundle
 import android.transition.TransitionManager
@@ -8,6 +8,9 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModelProvider
+import com.example.taskshabits.R
+import com.example.taskshabits.data.Habits
+import com.example.taskshabits.util.HabitsViewModel
 
 class HabitsDialogFragment: DialogFragment(){
 

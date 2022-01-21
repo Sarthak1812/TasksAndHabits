@@ -1,4 +1,4 @@
-package com.example.taskshabits
+package com.example.taskshabits.data
 
 import android.content.Context
 import androidx.room.Database

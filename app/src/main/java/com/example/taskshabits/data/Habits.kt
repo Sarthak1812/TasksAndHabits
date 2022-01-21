@@ -1,4 +1,4 @@
-package com.example.taskshabits
+package com.example.taskshabits.data
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

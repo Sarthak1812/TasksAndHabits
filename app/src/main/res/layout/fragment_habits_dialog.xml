@@ -54,6 +54,8 @@
             android:textSize="26sp"
             android:textStyle="bold" />
 
+
+
         <EditText
             android:id="@+id/et_habits_days_count"
             android:layout_width="match_parent"

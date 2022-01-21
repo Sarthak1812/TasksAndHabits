@@ -1,4 +1,4 @@
-package com.example.taskshabits
+package com.example.taskshabits.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +7,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.example.taskshabits.R
+import com.example.taskshabits.data.Habits
+import com.example.taskshabits.util.HabitsCallback
 
 class HabitsAdapter :RecyclerView.Adapter<HabitsAdapter.ViewHolder>(){
 

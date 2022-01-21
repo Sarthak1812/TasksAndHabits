@@ -1,12 +1,15 @@
-package com.example.taskshabits
+package com.example.taskshabits.activity
 
 import android.os.Bundle
-import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.taskshabits.R
+import com.example.taskshabits.adapter.HabitsAdapter
+import com.example.taskshabits.fragment.HabitsDialogFragment
+import com.example.taskshabits.util.HabitsViewModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class HabitsActivity : AppCompatActivity() {
