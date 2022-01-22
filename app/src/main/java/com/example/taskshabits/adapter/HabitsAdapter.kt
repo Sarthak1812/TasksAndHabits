@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.airbnb.lottie.LottieAnimationView
 import com.example.taskshabits.R
 import com.example.taskshabits.data.Habits
 import com.example.taskshabits.util.HabitsCallback
@@ -35,7 +36,9 @@ class HabitsAdapter :RecyclerView.Adapter<HabitsAdapter.ViewHolder>(){
         val habitsItemViewModel = mHabitsList[position]
         holder.habitsTitle.text = habitsItemViewModel.cardTitle
         holder.habitsDaysCount.text = habitsItemViewModel.cardDaysCount
-        holder.habitsImage.setImageResource(R.drawable.ic_tags_default_target)
+        holder.habitsImage.setImageResource(R.drawable.ic_tags_yoga)
+//        setTagImage(habitsItemViewModel.cardImage, holder)
+
     }
 
     override fun getItemCount(): Int {
@@ -62,6 +65,18 @@ class HabitsAdapter :RecyclerView.Adapter<HabitsAdapter.ViewHolder>(){
         init {
             itemView.setOnClickListener{
                 listener.onHabitsItemClick(adapterPosition)
+            }
+        }
+    }
+
+    private fun setTagImage(tagChoice: String, holder: ViewHolder) {
+        when(tagChoice) {
+            "Workout/Fitness" -> holder.habitsImage.setImageResource(R.drawable.ic_tags_workout)
+            "Work/Task" -> holder.habitsImage.setImageResource(R.drawable.ic_tags_work)
+            "Yoga/Meditation" -> holder.habitsImage.setImageResource(R.drawable.ic_tags_yoga)
+            "Default-Target" -> holder.habitsImage.setImageResource(R.drawable.ic_tags_default_target)
+            else -> {
+                holder.habitsImage.setImageResource(R.drawable.ic_tags_default_target)
             }
         }
     }
