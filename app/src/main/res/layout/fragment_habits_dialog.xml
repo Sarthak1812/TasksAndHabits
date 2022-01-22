@@ -36,12 +36,15 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:orientation="vertical">
-
-        <ImageView
+        
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottie_anim_view_tag"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            android:src="@android:drawable/star_big_on"/>
+            android:layout_height="150dp"
+            app:lottie_rawRes="@raw/tag_default_target"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"/>
+
 
         <EditText
             android:id="@+id/et_habits_title"
