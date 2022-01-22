@@ -35,7 +35,7 @@ class HabitsAdapter :RecyclerView.Adapter<HabitsAdapter.ViewHolder>(){
         val habitsItemViewModel = mHabitsList[position]
         holder.habitsTitle.text = habitsItemViewModel.cardTitle
         holder.habitsDaysCount.text = habitsItemViewModel.cardDaysCount
-        holder.habitsImage.setImageResource(habitsItemViewModel.cardImage)
+        holder.habitsImage.setImageResource(R.drawable.ic_tags_default_target)
     }
 
     override fun getItemCount(): Int {
