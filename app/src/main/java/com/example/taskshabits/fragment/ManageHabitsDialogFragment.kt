@@ -12,7 +12,7 @@ import com.airbnb.lottie.LottieAnimationView
 import com.example.taskshabits.R
 import com.example.taskshabits.util.HabitsViewModel
 
-class HabitsDialogFragment: DialogFragment(){
+class ManageHabitsDialogFragment : DialogFragment(){
 
     private lateinit var mHabitsViewModel: HabitsViewModel
 
@@ -22,8 +22,8 @@ class HabitsDialogFragment: DialogFragment(){
     private lateinit var doneDialogTV : TextView
     private lateinit var closeDialogIB: ImageButton
     private lateinit var doneContainerLL: LinearLayout
-    private lateinit var titleEt:EditText
-    private lateinit var daysCompletedCountEt:EditText
+    private lateinit var titleEt: EditText
+    private lateinit var daysCompletedCountEt: EditText
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -93,12 +93,15 @@ class HabitsDialogFragment: DialogFragment(){
 
     private fun insertDataIntoDb() {
 
-//        val data2 = Habits(0, "DATA1", "10 days to go", "Default-Target")
 
-        // Add to db
-//        mHabitsViewModel.addHabit(data2)
-        Toast.makeText(context, "added", Toast.LENGTH_SHORT).show()
+
+//        val data3 = Habits(0, "DATA1", 21, 10, Date(), "Yoga/Meditation")
+
+//         Add to db
+//        mHabitsViewModel.addHabit(data3)
+//        Toast.makeText(context, "added", Toast.LENGTH_SHORT).show()
 
 
     }
+
 }

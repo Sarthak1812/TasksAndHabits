@@ -1,5 +1,6 @@
 package com.example.taskshabits.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,10 +8,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.airbnb.lottie.LottieAnimationView
 import com.example.taskshabits.R
 import com.example.taskshabits.data.Habits
 import com.example.taskshabits.util.HabitsCallback
+import java.util.*
 
 class HabitsAdapter :RecyclerView.Adapter<HabitsAdapter.ViewHolder>(){
 
@@ -35,10 +36,20 @@ class HabitsAdapter :RecyclerView.Adapter<HabitsAdapter.ViewHolder>(){
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val habitsItemViewModel = mHabitsList[position]
         holder.habitsTitle.text = habitsItemViewModel.cardTitle
-        holder.habitsDaysCount.text = habitsItemViewModel.cardDaysCount
-//        holder.habitsImage.setImageResource(R.drawable.ic_tags_yoga)
+        holder.habitsDaysCount.text = habitsItemViewModel.cardDaysCompleted.toString()
+        //        holder.habitsImage.setImageResource(R.drawable.ic_tags_yoga)
         setTagImage(habitsItemViewModel.cardTag, holder)
 
+//        val calendar =  Calendar.getInstance()
+//        calendar.set(Calendar.HOUR_OF_DAY, 0)
+//        calendar.set(Calendar.MINUTE, 0)
+//        calendar.set(Calendar.SECOND, 0)
+//        calendar.set(Calendar.MILLISECOND, 0)
+//        calendar.add(Calendar.DAY_OF_YEAR, 1)
+//        val tomorrow = calendar.time
+//
+//        if (tomorrow.after(habitsItemViewModel.cardDateLastCompleted))
+//            Log.d("date", "onBindViewHolder: true")
     }
 
     override fun getItemCount(): Int {

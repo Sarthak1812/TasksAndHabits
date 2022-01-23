@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.taskshabits.R
 import com.example.taskshabits.adapter.HabitsAdapter
-import com.example.taskshabits.fragment.HabitsDialogFragment
+import com.example.taskshabits.fragment.AddHabitsDialogFragment
 import com.example.taskshabits.util.HabitsViewModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
@@ -39,14 +39,14 @@ class HabitsActivity : AppCompatActivity() {
         // habits card item onClick listener
         habitsAdapter.setOnHabitsItemClickListener(object : HabitsAdapter.OnHabitsItemClickListener{
             override fun onHabitsItemClick(position: Int) {
-                val habitsDialogFragment = HabitsDialogFragment()
-                habitsDialogFragment.show(supportFragmentManager, "Dialog")
+//                val habitsDialogFragment = HabitsDialogFragment()
+//                habitsDialogFragment.show(supportFragmentManager, "Dialog")
             }
         })
 
         addHabitFAB.setOnClickListener {
-//            val habitsDialogFragment = HabitsDialogFragment()
-//            habitsDialogFragment.show(supportFragmentManager, "Dialog")
+            val habitsDialogFragment = AddHabitsDialogFragment()
+            habitsDialogFragment.show(supportFragmentManager, "Dialog")
         }
 
     }
