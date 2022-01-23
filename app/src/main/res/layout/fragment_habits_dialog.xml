@@ -78,7 +78,7 @@
 
 
         <EditText
-            android:id="@+id/et_habits_days_count"
+            android:id="@+id/et_habits_days_compl_count"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"

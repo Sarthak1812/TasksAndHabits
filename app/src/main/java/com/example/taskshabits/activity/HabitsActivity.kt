@@ -39,13 +39,14 @@ class HabitsActivity : AppCompatActivity() {
         // habits card item onClick listener
         habitsAdapter.setOnHabitsItemClickListener(object : HabitsAdapter.OnHabitsItemClickListener{
             override fun onHabitsItemClick(position: Int) {
-
+                val habitsDialogFragment = HabitsDialogFragment()
+                habitsDialogFragment.show(supportFragmentManager, "Dialog")
             }
         })
 
         addHabitFAB.setOnClickListener {
-            val habitsDialogFragment = HabitsDialogFragment()
-            habitsDialogFragment.show(supportFragmentManager, "Dialog")
+//            val habitsDialogFragment = HabitsDialogFragment()
+//            habitsDialogFragment.show(supportFragmentManager, "Dialog")
         }
 
     }
