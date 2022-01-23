@@ -9,5 +9,5 @@ data class Habits(
     @PrimaryKey(autoGenerate = true) val id: Int,
     @ColumnInfo(name = "TITLE") val cardTitle: String,
     @ColumnInfo(name = "DAYS_COUNT") val cardDaysCount: String,
-    @ColumnInfo(name = "IMAGE") val cardImage: Int
+    @ColumnInfo(name = "TAG") val cardTag: String
 )

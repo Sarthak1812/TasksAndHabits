@@ -82,10 +82,10 @@ class HabitsDialogFragment: DialogFragment(){
     private fun insertDataIntoDb() {
         // TODO("Add Function for Input Check ")
 
-        val data1 = Habits(0, "DATA1", "10 days to go", android.R.drawable.star_big_on)
+        val data2 = Habits(0, "DATA1", "10 days to go", "Default-Target")
 
         // Add to db
-//        mHabitsViewModel.addHabit(data1)
+        mHabitsViewModel.addHabit(data2)
         Toast.makeText(context, "added", Toast.LENGTH_SHORT).show()
 
 
