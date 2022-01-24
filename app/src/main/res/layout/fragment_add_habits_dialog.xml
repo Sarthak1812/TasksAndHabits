@@ -45,17 +45,21 @@
             app:lottie_autoPlay="true"
             app:lottie_loop="true"/>
 
-
-        <EditText
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/et_habits_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
+            android:padding="4dp"
+            android:layout_margin="12dp"
             android:gravity="center"
-            android:hint="title"
-            android:text=""
-            android:textSize="26sp"
-            android:textStyle="bold" />
+            android:hint="Title"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
 
 
         <com.google.android.material.textfield.TextInputLayout
@@ -77,49 +81,47 @@
         </com.google.android.material.textfield.TextInputLayout>
 
 
-        <EditText
-            android:id="@+id/et_habits_days_compl_count"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="4dp"
-            android:gravity="center"
-            android:hint="days count"
-            android:text=""
-            android:textSize="20sp"/>
-
-        <ProgressBar
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-            android:progress="48"/>
-
-
         <LinearLayout
-            android:id="@+id/ll_habit_done_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/btn_habit_dialog_done"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Done 😎"
-                android:visibility="gone"/>
+            android:orientation="horizontal"
+            android:layout_margin="4dp">
 
             <TextView
-                android:id="@+id/tv_habit_dialog_done"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="4dp"
                 android:layout_gravity="center"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:text="Completed, \nSee You Tomorrow!! 👋🏼 "
-                android:visibility="gone"/>
+                android:text="Take Challenge for "
+                android:textSize="18sp"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/et_habits_days_max_count"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:hint="Days"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:textSize="18sp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
 
         </LinearLayout>
 
+
+        <Button
+            android:id="@+id/btn_habit_dialog_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_gravity="center"
+            android:text="Add"
+            android:textSize="18sp"
+            android:visibility="visible"/>
 
 
     </LinearLayout>
