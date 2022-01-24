@@ -1,6 +1,7 @@
 package com.example.taskshabits.fragment
 
 import android.os.Bundle
+import android.text.TextUtils
 import android.transition.TransitionManager
 import android.util.Log
 import android.view.LayoutInflater
@@ -90,13 +91,42 @@ class AddHabitsDialogFragment: DialogFragment(){
 
         // Data from user
         val habitTitle = titleEt.editText?.text.toString()
-        val habitMaxDay = Integer.parseInt(daysMaxCountEt.editText?.text.toString())
+        val habitMaxDayString = daysMaxCountEt.editText?.text.toString()
         val tagSelected = autoCompleteTagsTv.text.toString()
 
-        // Add to database
-        mHabitsViewModel.addHabit(Habits(0, habitTitle, habitMaxDay, 0, Date(), tagSelected))
-        Toast.makeText(context, "Habit Created", Toast.LENGTH_SHORT).show()
+        if (!TextUtils.isEmpty(habitTitle) && habitMaxDayString != "")
+        {
 
-        dismiss()
+            val habitMaxDay = Integer.parseInt(habitMaxDayString)
+
+            // Add to database
+            mHabitsViewModel.addHabit(Habits(0, habitTitle, habitMaxDay, 0, Date(), tagSelected))
+            Toast.makeText(context, "input = false", Toast.LENGTH_SHORT).show()
+
+            dismiss()
+
+        }
+        else if (TextUtils.isEmpty(habitTitle) && habitMaxDayString == "")
+        {
+            titleEt.isErrorEnabled = true
+            daysMaxCountEt.isErrorEnabled = true
+            titleEt.error = "Invalid"
+            daysMaxCountEt.error = "Invalid"
+        }
+        else if (TextUtils.isEmpty(habitTitle))
+        {
+            titleEt.isErrorEnabled = true
+            titleEt.error = "Invalid"
+        }
+        else if (habitMaxDayString == "")
+        {
+            daysMaxCountEt.isErrorEnabled = true
+            daysMaxCountEt.error = "Invalid"
+        }
+
+     
+
     }
+
+
 }
