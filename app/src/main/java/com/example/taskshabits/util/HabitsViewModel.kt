@@ -27,4 +27,8 @@ class HabitsViewModel(application: Application):AndroidViewModel(application) {
         repository.updateHabitData(habits)
     }
 
+    fun deleteHabit(habits: Habits) = viewModelScope.launch(Dispatchers.IO) {
+        repository.deleteHabitData(habits)
+    }
+
 }

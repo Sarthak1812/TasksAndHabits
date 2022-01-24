@@ -1,5 +1,6 @@
 package com.example.taskshabits.fragment
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextUtils
@@ -83,6 +84,10 @@ class ManageHabitsDialogFragment : DialogFragment(){
             updateHabit()
         }
 
+        deleteDialogIB.setOnClickListener {
+            deleteHabit()
+        }
+
         // onClick - Close ImageButton
         closeDialogIB.setOnClickListener {
             dismiss()
@@ -155,5 +160,24 @@ class ManageHabitsDialogFragment : DialogFragment(){
         }
     }
 
+    private fun deleteHabit() {
+
+        val alertBuilder = AlertDialog.Builder(requireContext())
+
+        alertBuilder.setTitle("Delete Habit - $title")
+        alertBuilder.setMessage("Are you sure you want to delete")
+
+        alertBuilder.setPositiveButton("YES"){ dialog , which ->
+            // Delete Habit from DB
+//            mHabitsViewModel.deleteHabit(Habits(habitId, title, daysGoal, daysComplete, Date(dateStored), habitTag))
+            Toast.makeText(context, "Deleted", Toast.LENGTH_SHORT).show()
+        }
+
+        alertBuilder.setNegativeButton("NO"){ dialog, which -> }
+
+        alertBuilder.create().show()
+    }
+
 
 }
+

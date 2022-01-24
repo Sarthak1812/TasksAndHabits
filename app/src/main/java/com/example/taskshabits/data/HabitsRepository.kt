@@ -15,4 +15,8 @@ class HabitsRepository(private val habitsDao: HabitsDao) {
     fun updateHabitData(habits: Habits){
         habitsDao.updateHabit(habits)
     }
+
+    fun deleteHabitData(habits: Habits){
+        habitsDao.deleteHabit(habits)
+    }
 }
