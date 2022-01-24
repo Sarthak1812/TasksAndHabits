@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.airbnb.lottie.LottieAnimationView
 import com.example.taskshabits.R
 import com.example.taskshabits.util.HabitsViewModel
+import com.google.android.material.textfield.TextInputLayout
 
 
 // Updating, deleting habit fragment
@@ -23,9 +24,11 @@ class ManageHabitsDialogFragment : DialogFragment(){
     private lateinit var doneDialogBtn: Button
     private lateinit var doneDialogTV : TextView
     private lateinit var closeDialogIB: ImageButton
+    private lateinit var updateDialogIB: ImageButton
+    private lateinit var deleteDialogIB: ImageButton
     private lateinit var doneContainerLL: LinearLayout
-    private lateinit var titleEt: EditText
-    private lateinit var daysCompletedCountEt: EditText
+    private lateinit var titleEt: TextInputLayout
+    private lateinit var daysCompletedCountEt: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -50,7 +53,7 @@ class ManageHabitsDialogFragment : DialogFragment(){
         doneDialogBtn.visibility = View.VISIBLE
         doneDialogTV.visibility = View.GONE
         doneDialogBtn.setOnClickListener {
-            insertDataIntoDb()
+            updateDB()
             TransitionManager.beginDelayedTransition(doneContainerLL)
             doneDialogTV.visibility = View.VISIBLE
             doneDialogBtn.visibility = View.GONE
@@ -59,21 +62,23 @@ class ManageHabitsDialogFragment : DialogFragment(){
         // onClick - Close ImageButton
         closeDialogIB.setOnClickListener {
             dismiss()
-            Toast.makeText(context, "Closed", Toast.LENGTH_SHORT).show()
         }
 
 
         return rootView
     }
 
+
     private fun initViews(rootView: View) {
         titleEt = rootView.findViewById(R.id.et_habits_title)
-        daysCompletedCountEt = rootView.findViewById(R.id.et_habits_days_max_count)
+        daysCompletedCountEt = rootView.findViewById(R.id.et_habits_days_completed)
         tagAnimLottie = rootView.findViewById(R.id.lottie_anim_view_tag)
         autoCompleteTagsTv = rootView.findViewById(R.id.autoComplete_tags)
         doneDialogBtn = rootView.findViewById(R.id.btn_habit_dialog_add)
         doneDialogTV = rootView.findViewById(R.id.tv_habit_dialog_done)
         closeDialogIB = rootView.findViewById(R.id.btn_habit_dialog_close)
+        updateDialogIB = rootView.findViewById(R.id.btn_habit_dialog_update)
+        deleteDialogIB = rootView.findViewById(R.id.btn_habit_dialog_delete)
         doneContainerLL = rootView.findViewById(R.id.ll_habit_done_container)
         mHabitsViewModel = ViewModelProvider(this).get(HabitsViewModel::class.java)
     }
@@ -93,17 +98,9 @@ class ManageHabitsDialogFragment : DialogFragment(){
     }
 
 
-    private fun insertDataIntoDb() {
-
-
-
-//        val data3 = Habits(0, "DATA1", 21, 10, Date(), "Yoga/Meditation")
-
-//         Add to db
-//        mHabitsViewModel.addHabit(data3)
-//        Toast.makeText(context, "added", Toast.LENGTH_SHORT).show()
-
-
+    private fun updateDB() {
+        Toast.makeText(context, "Update", Toast.LENGTH_SHORT).show()
     }
+
 
 }
