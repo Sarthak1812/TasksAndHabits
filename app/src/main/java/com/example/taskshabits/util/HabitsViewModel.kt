@@ -23,5 +23,8 @@ class HabitsViewModel(application: Application):AndroidViewModel(application) {
             repository.addHabitData(habits)
     }
 
+    fun updateHabit(habits: Habits) = viewModelScope.launch(Dispatchers.IO) {
+        repository.updateHabitData(habits)
+    }
 
 }

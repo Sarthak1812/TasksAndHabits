@@ -8,8 +8,11 @@ class HabitsRepository(private val habitsDao: HabitsDao) {
 
     val readAllHabitsData: LiveData<List<Habits>> = habitsDao.readAllHabits()
 
-    suspend fun addHabitData(habits: Habits){
+    fun addHabitData(habits: Habits){
         habitsDao.addHabit(habits)
     }
 
+    fun updateHabitData(habits: Habits){
+        habitsDao.updateHabit(habits)
+    }
 }

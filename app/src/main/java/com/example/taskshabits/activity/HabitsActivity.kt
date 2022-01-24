@@ -45,6 +45,7 @@ class HabitsActivity : AppCompatActivity() {
 
             //Bundle to pass data
             val bundle = Bundle()
+            bundle.putInt("Id", habits.id)
             bundle.putString("title", habits.cardTitle)
             bundle.putInt("daysGoal", habits.cardDayGoal)
             bundle.putInt("daysCompleted", habits.cardDaysCompleted)

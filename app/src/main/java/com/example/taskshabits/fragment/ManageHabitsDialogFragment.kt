@@ -35,6 +35,7 @@ class ManageHabitsDialogFragment : DialogFragment(){
     private lateinit var titleEt: TextInputLayout
     private lateinit var daysCompletedCountEt: TextView
 
+    private var habitId:Int = 0
     private lateinit var title: String
     private var daysComplete: Int = 0
     private var daysGoal: Int = 0
@@ -51,7 +52,7 @@ class ManageHabitsDialogFragment : DialogFragment(){
         // init view components
         initViews(rootView)
 
-
+        habitId = arguments?.getInt("Id", 0)!!
         title = arguments?.getString("title", "").toString()
         daysGoal = arguments?.getInt("daysGoal", 0)!!
         daysComplete = arguments?.getInt("daysCompleted", 0)!!
@@ -70,7 +71,6 @@ class ManageHabitsDialogFragment : DialogFragment(){
         doneDialogBtn.visibility = View.VISIBLE
         doneDialogTV.visibility = View.GONE
         doneDialogBtn.setOnClickListener {
-            updateDB()
             TransitionManager.beginDelayedTransition(btnContainerLL)
             doneDialogTV.visibility = View.VISIBLE
             doneDialogBtn.visibility = View.GONE
@@ -123,8 +123,10 @@ class ManageHabitsDialogFragment : DialogFragment(){
     }
 
 
-    private fun updateDB() {
-        Toast.makeText(context, "Update", Toast.LENGTH_SHORT).show()
+    private fun updateDB(habits: Habits) {
+        mHabitsViewModel.updateHabit(habits)
+        Toast.makeText(context, "Updated", Toast.LENGTH_SHORT).show()
+        dismiss()
     }
 
 
@@ -140,8 +142,10 @@ class ManageHabitsDialogFragment : DialogFragment(){
         updateBtn.setOnClickListener {
             // Data from user
             val habitTitle = titleEt.editText?.text.toString()
-            if (!TextUtils.isEmpty(habitTitle))
-                updateDB()
+            if (!TextUtils.isEmpty(habitTitle)) {
+                val updateHabits = Habits(habitId, habitTitle, daysGoal, daysComplete, Date(), autoCompleteTagsTv.text.toString())
+                updateDB(updateHabits)
+            }
             else
             {
                 titleEt.isErrorEnabled = true
