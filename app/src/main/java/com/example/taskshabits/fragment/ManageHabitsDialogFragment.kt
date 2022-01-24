@@ -35,6 +35,7 @@ class ManageHabitsDialogFragment : DialogFragment(){
     private lateinit var btnContainerLL: LinearLayout
     private lateinit var titleEt: TextInputLayout
     private lateinit var daysCompletedCountEt: TextView
+    private lateinit var progressBarHabit: ProgressBar
 
     private var habitId:Int = 0
     private lateinit var title: String
@@ -64,7 +65,8 @@ class ManageHabitsDialogFragment : DialogFragment(){
         daysCompletedCountEt.text = daysComplete.toString()
         autoCompleteTagsTv.text = Editable.Factory.getInstance().newEditable(habitTag)
         setTagAnimation(habitTag, tagAnimLottie)
-
+        val habitProgressDiv = daysComplete.toDouble()/daysGoal
+        progressBarHabit.progress = (habitProgressDiv*100).toInt()
 
         taskCompleteCheck()
 
@@ -117,6 +119,7 @@ class ManageHabitsDialogFragment : DialogFragment(){
         updateDialogIB = rootView.findViewById(R.id.ib_habit_dialog_update)
         deleteDialogIB = rootView.findViewById(R.id.ib_habit_dialog_delete)
         btnContainerLL = rootView.findViewById(R.id.ll_habit_btn_container)
+        progressBarHabit = rootView.findViewById(R.id.progress_habit_days)
         mHabitsViewModel = ViewModelProvider(this).get(HabitsViewModel::class.java)
     }
 

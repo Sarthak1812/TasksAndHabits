@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -30,9 +31,9 @@ class HabitsAdapter :RecyclerView.Adapter<HabitsAdapter.ViewHolder>(){
         val habitsItemViewModel = mHabitsList[position]
         holder.habitsTitle.text = habitsItemViewModel.cardTitle
         holder.habitsDaysCount.text = habitsItemViewModel.cardDaysCompleted.toString()
-        //        holder.habitsImage.setImageResource(R.drawable.ic_tags_yoga)
         setTagImage(habitsItemViewModel.cardTag, holder)
-
+        val progressHabit= (habitsItemViewModel.cardDaysCompleted).toDouble()/(habitsItemViewModel.cardDayGoal)
+        holder.habitProgressBar.progress = (progressHabit*100).toInt()
     }
 
     override fun getItemCount(): Int {
@@ -54,7 +55,7 @@ class HabitsAdapter :RecyclerView.Adapter<HabitsAdapter.ViewHolder>(){
         val habitsTitle: TextView = itemView.findViewById(R.id.tv_habits_card_title)
         val habitsDaysCount: TextView = itemView.findViewById(R.id.tv_habits_card_day_count)
         val habitsImage: ImageView = itemView.findViewById(R.id.iv_habits_card)
-
+        val habitProgressBar: ProgressBar = itemView.findViewById(R.id.pb_habits_card)
         // on item click
         init {
             itemView.setOnClickListener{
