@@ -158,7 +158,8 @@ class ManageHabitsDialogFragment : DialogFragment(){
 
     private fun updateDB(habits: Habits) {
         mHabitsViewModel.updateHabit(habits)
-        Toast.makeText(context, "Updated", Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, "Updated DB", Toast.LENGTH_SHORT).show()
+        dismiss()
     }
 
 
@@ -183,7 +184,6 @@ class ManageHabitsDialogFragment : DialogFragment(){
                 titleEt.isErrorEnabled = true
                 titleEt.error = "Invalid"
             }
-
         }
     }
 
@@ -196,8 +196,8 @@ class ManageHabitsDialogFragment : DialogFragment(){
 
         alertBuilder.setPositiveButton("YES"){ dialog , which ->
             // Delete Habit from DB
-//            mHabitsViewModel.deleteHabit(Habits(habitId, title, daysGoal, daysComplete, Date(dateStored), habitTag))
-            Toast.makeText(context, "Deleted", Toast.LENGTH_SHORT).show()
+            mHabitsViewModel.deleteHabit(Habits(habitId, title, daysGoal, daysComplete, Date(dateStored), habitTag))
+            Toast.makeText(context, "Deleted Habit", Toast.LENGTH_SHORT).show()
         }
 
         alertBuilder.setNegativeButton("NO"){ dialog, which -> }
