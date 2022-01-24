@@ -12,6 +12,8 @@ import com.airbnb.lottie.LottieAnimationView
 import com.example.taskshabits.R
 import com.example.taskshabits.util.HabitsViewModel
 
+
+// Updating, deleting habit fragment
 class ManageHabitsDialogFragment : DialogFragment(){
 
     private lateinit var mHabitsViewModel: HabitsViewModel
@@ -30,7 +32,7 @@ class ManageHabitsDialogFragment : DialogFragment(){
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val rootView = inflater.inflate(R.layout.fragment_habits_dialog, container, false)
+        val rootView = inflater.inflate(R.layout.fragment_manage_habits_dialog, container, false)
 
         // init view components
         initViews(rootView)
@@ -66,10 +68,10 @@ class ManageHabitsDialogFragment : DialogFragment(){
 
     private fun initViews(rootView: View) {
         titleEt = rootView.findViewById(R.id.et_habits_title)
-        daysCompletedCountEt = rootView.findViewById(R.id.et_habits_days_compl_count)
+        daysCompletedCountEt = rootView.findViewById(R.id.et_habits_days_max_count)
         tagAnimLottie = rootView.findViewById(R.id.lottie_anim_view_tag)
         autoCompleteTagsTv = rootView.findViewById(R.id.autoComplete_tags)
-        doneDialogBtn = rootView.findViewById(R.id.btn_habit_dialog_done)
+        doneDialogBtn = rootView.findViewById(R.id.btn_habit_dialog_add)
         doneDialogTV = rootView.findViewById(R.id.tv_habit_dialog_done)
         closeDialogIB = rootView.findViewById(R.id.btn_habit_dialog_close)
         doneContainerLL = rootView.findViewById(R.id.ll_habit_done_container)
