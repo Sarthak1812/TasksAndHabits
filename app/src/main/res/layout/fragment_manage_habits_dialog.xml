@@ -8,7 +8,7 @@
 
     <!-- Linear Layout for the close/cross, update, delete button -->
     <LinearLayout
-        android:id="@+id/ll_Habits_dialog_close"
+        android:id="@+id/ll_Habits_dialog_ib"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -16,7 +16,7 @@
         android:orientation="vertical">
 
         <ImageButton
-            android:id="@+id/btn_habit_dialog_close"
+            android:id="@+id/ib_habit_dialog_close"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:background="@null"
@@ -24,7 +24,7 @@
             android:contentDescription="Cross/Close/Clear Cross Habit ImageButton" />
 
         <ImageButton
-            android:id="@+id/btn_habit_dialog_update"
+            android:id="@+id/ib_habit_dialog_update"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:background="@null"
@@ -32,7 +32,7 @@
             android:contentDescription="Update Habit ImageButton" />
 
         <ImageButton
-            android:id="@+id/btn_habit_dialog_delete"
+            android:id="@+id/ib_habit_dialog_delete"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:background="@null"
@@ -133,7 +133,7 @@
 
 
         <LinearLayout
-            android:id="@+id/ll_habit_done_container"
+            android:id="@+id/ll_habit_btn_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -145,6 +145,14 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="Done 😎"
+                android:visibility="gone"/>
+
+            <Button
+                android:id="@+id/btn_habit_dialog_update"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Update"
                 android:visibility="gone"/>
 
             <TextView

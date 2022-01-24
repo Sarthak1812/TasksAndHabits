@@ -1,6 +1,7 @@
 package com.example.taskshabits.activity
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -38,12 +39,22 @@ class HabitsActivity : AppCompatActivity() {
 
 
         // habits card item onClick listener
-        habitsAdapter.setOnHabitsItemClickListener(object : HabitsAdapter.OnHabitsItemClickListener{
-            override fun onHabitsItemClick(position: Int) {
-                val habitsManageDialogFragment = ManageHabitsDialogFragment()
-                habitsManageDialogFragment.show(supportFragmentManager, "ManageDialog")
-            }
-        })
+        habitsAdapter.mHabitsItemClick = { habits ->
+//            Log.d("manage", habits.cardDateLastCompleted.time.toString())
+            val habitsManageDialogFragment = ManageHabitsDialogFragment()
+
+            //Bundle to pass data
+            val bundle = Bundle()
+            bundle.putString("title", habits.cardTitle)
+            bundle.putInt("daysGoal", habits.cardDayGoal)
+            bundle.putInt("daysCompleted", habits.cardDaysCompleted)
+            bundle.putLong("dateStored", habits.cardDateLastCompleted.time)
+            bundle.putString("tag", habits.cardTag)
+
+            habitsManageDialogFragment.arguments = bundle
+            habitsManageDialogFragment.show(supportFragmentManager, "ManageDialog")
+        }
+
 
         addHabitFAB.setOnClickListener {
             val habitsAddDialogFragment = AddHabitsDialogFragment()
