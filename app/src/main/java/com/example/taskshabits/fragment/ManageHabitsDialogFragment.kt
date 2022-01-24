@@ -66,12 +66,20 @@ class ManageHabitsDialogFragment : DialogFragment(){
         setTagAnimation(habitTag, tagAnimLottie)
 
 
+        taskCompleteCheck()
+
+        // to get the coming midnight time
+        val calendar =  Calendar.getInstance()
+        calendar.set(Calendar.HOUR_OF_DAY, 0)
+        calendar.set(Calendar.MINUTE, 0)
+        calendar.set(Calendar.SECOND, 0)
+        calendar.set(Calendar.MILLISECOND, 0)
+        calendar.add(Calendar.DAY_OF_YEAR, 1)
+        val tomorrow = calendar.time
 
 
-        // changing/replacing the DoneBtn onClick with DoneTextView
-        doneDialogBtn.visibility = View.VISIBLE
-        doneDialogTV.visibility = View.GONE
         doneDialogBtn.setOnClickListener {
+            updateDB(Habits(habitId, title, daysGoal, daysComplete+1, tomorrow, habitTag))
             TransitionManager.beginDelayedTransition(btnContainerLL)
             doneDialogTV.visibility = View.VISIBLE
             doneDialogBtn.visibility = View.GONE
@@ -80,6 +88,7 @@ class ManageHabitsDialogFragment : DialogFragment(){
         updateDialogIB.setOnClickListener{
             TransitionManager.beginDelayedTransition(btnContainerLL)
             doneDialogBtn.visibility = View.GONE
+            doneDialogTV.visibility = View.GONE
             updateBtn.visibility = View.VISIBLE
             updateHabit()
         }
@@ -93,10 +102,8 @@ class ManageHabitsDialogFragment : DialogFragment(){
             dismiss()
         }
 
-
         return rootView
     }
-
 
     private fun initViews(rootView: View) {
         titleEt = rootView.findViewById(R.id.et_habits_title)
@@ -127,11 +134,31 @@ class ManageHabitsDialogFragment : DialogFragment(){
         animTagView.playAnimation()
     }
 
+    private fun taskCompleteCheck() {
+
+        val currentTime = Date()
+        val dbDate = Date(dateStored)
+
+
+        // changing/replacing the DoneBtn onClick with DoneTextView
+        if (currentTime.after(dbDate)){
+            doneDialogBtn.visibility = View.VISIBLE
+            doneDialogTV.visibility = View.GONE
+            updateBtn.visibility = View.GONE
+        }
+        else{
+            doneDialogBtn.visibility = View.GONE
+            doneDialogTV.visibility = View.VISIBLE
+            updateBtn.visibility = View.GONE
+        }
+
+
+    }
+
 
     private fun updateDB(habits: Habits) {
         mHabitsViewModel.updateHabit(habits)
         Toast.makeText(context, "Updated", Toast.LENGTH_SHORT).show()
-        dismiss()
     }
 
 
