@@ -14,8 +14,13 @@ class MainActivity : AppCompatActivity() {
 
         val catHabitsBtn = findViewById<Button>(R.id.btn_cat_habits)
         catHabitsBtn.setOnClickListener {
-            Toast.makeText(this, "ButtonClicked", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, HabitsActivity::class.java)
+            startActivity(intent)
+        }
+
+        val catTasksBtn = findViewById<Button>(R.id.btn_cat_tasks)
+        catTasksBtn.setOnClickListener {
+            val intent = Intent(this, TasksActivity::class.java)
             startActivity(intent)
         }
     }
