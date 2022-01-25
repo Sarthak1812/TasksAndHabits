@@ -12,10 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TasksHabits">
         <activity
-            android:name=".HabitsActivity"
+            android:name=".activity.HabitsActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

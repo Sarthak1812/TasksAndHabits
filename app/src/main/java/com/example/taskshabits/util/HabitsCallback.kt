@@ -1,6 +1,7 @@
-package com.example.taskshabits
+package com.example.taskshabits.util
 
 import androidx.recyclerview.widget.DiffUtil
+import com.example.taskshabits.data.Habits
 
 class HabitsCallback(
     private val oldList: List<Habits>,

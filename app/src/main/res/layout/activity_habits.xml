@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HabitsActivity">
+    tools:context=".activity.HabitsActivity">
 
     <TextView
         android:id="@+id/tv_title_habit"
@@ -57,7 +57,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_margin="20dp"
-        android:src="@android:drawable/ic_input_add"
+        android:src="@drawable/ic_add_24"
         android:contentDescription="Add new habit" />
 
 

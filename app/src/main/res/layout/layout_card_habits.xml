@@ -45,8 +45,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="25dp"
                     android:layout_marginHorizontal="8dp"
-                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                    android:progress="48"/>
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal" />
 
             </LinearLayout>
 
@@ -56,7 +55,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginVertical="4dp"
                 android:layout_marginHorizontal="8dp"
-                android:src="@android:drawable/star_big_on"
+                android:src="@drawable/ic_tags_work"
                 android:layout_weight="0.75"/>
 
 
