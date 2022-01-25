@@ -164,6 +164,16 @@
                 android:text="Completed, \nSee You Tomorrow!! 👋🏼 "
                 android:visibility="gone"/>
 
+            <TextView
+                android:id="@+id/tv_habit_all_done"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:text="🎉 Goal Reached 🎉"
+                android:visibility="gone"/>
+
+
         </LinearLayout>
 
 

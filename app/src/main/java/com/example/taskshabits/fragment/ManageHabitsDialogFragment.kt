@@ -28,6 +28,7 @@ class ManageHabitsDialogFragment : DialogFragment(){
     private lateinit var autoCompleteTagsTv: AutoCompleteTextView
     private lateinit var doneDialogBtn: Button
     private lateinit var doneDialogTV : TextView
+    private lateinit var allDoneTV: TextView
     private lateinit var closeDialogIB: ImageButton
     private lateinit var updateBtn: Button
     private lateinit var updateDialogIB: ImageButton
@@ -68,7 +69,15 @@ class ManageHabitsDialogFragment : DialogFragment(){
         val habitProgressDiv = daysComplete.toDouble()/daysGoal
         progressBarHabit.progress = (habitProgressDiv*100).toInt()
 
-        taskCompleteCheck()
+        if(habitProgressDiv==1.0)
+        {
+            doneDialogBtn.visibility = View.GONE
+            doneDialogTV.visibility = View.GONE
+            allDoneTV.visibility = View.VISIBLE
+            updateBtn.visibility = View.GONE
+        }
+        else
+            taskCompleteCheck()
 
         // to get the coming midnight time
         val calendar =  Calendar.getInstance()
@@ -91,6 +100,7 @@ class ManageHabitsDialogFragment : DialogFragment(){
             TransitionManager.beginDelayedTransition(btnContainerLL)
             doneDialogBtn.visibility = View.GONE
             doneDialogTV.visibility = View.GONE
+            allDoneTV.visibility = View.GONE
             updateBtn.visibility = View.VISIBLE
             updateHabit()
         }
@@ -114,6 +124,7 @@ class ManageHabitsDialogFragment : DialogFragment(){
         autoCompleteTagsTv = rootView.findViewById(R.id.autoComplete_tags)
         doneDialogBtn = rootView.findViewById(R.id.btn_habit_dialog_add)
         doneDialogTV = rootView.findViewById(R.id.tv_habit_dialog_done)
+        allDoneTV = rootView.findViewById(R.id.tv_habit_all_done)
         closeDialogIB = rootView.findViewById(R.id.ib_habit_dialog_close)
         updateBtn = rootView.findViewById(R.id.btn_habit_dialog_update)
         updateDialogIB = rootView.findViewById(R.id.ib_habit_dialog_update)
@@ -147,11 +158,13 @@ class ManageHabitsDialogFragment : DialogFragment(){
         if (currentTime.after(dbDate)){
             doneDialogBtn.visibility = View.VISIBLE
             doneDialogTV.visibility = View.GONE
+            allDoneTV.visibility = View.GONE
             updateBtn.visibility = View.GONE
         }
         else{
             doneDialogBtn.visibility = View.GONE
             doneDialogTV.visibility = View.VISIBLE
+            allDoneTV.visibility = View.GONE
             updateBtn.visibility = View.GONE
         }
 
