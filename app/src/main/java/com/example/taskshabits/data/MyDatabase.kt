@@ -4,18 +4,19 @@ import android.content.Context
 import androidx.room.*
 import com.example.taskshabits.util.DateTypeConverter
 
-@Database(entities = [Habits::class], version = 1, exportSchema = false)
+@Database(entities = [Habits::class, Tasks::class], version = 2, exportSchema = false)
 @TypeConverters(DateTypeConverter::class)
-abstract class HabitsDatabase : RoomDatabase() {
+abstract class MyDatabase : RoomDatabase() {
 
     abstract fun habitsDao() : HabitsDao
+    abstract fun tasksDao() : TasksDao
 
     companion object {
 
         @Volatile
-        private var INSTANCE: HabitsDatabase? = null
+        private var INSTANCE: MyDatabase? = null
 
-        fun getDatabase(context: Context): HabitsDatabase {
+        fun getDatabase(context: Context): MyDatabase {
 
             val tempInstance = INSTANCE
             if (tempInstance != null) {
@@ -25,7 +26,7 @@ abstract class HabitsDatabase : RoomDatabase() {
             synchronized(this) {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
-                    HabitsDatabase::class.java,
+                    MyDatabase::class.java,
                     "db_habits"
                 ).build()
                 INSTANCE = instance
