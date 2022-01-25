@@ -10,8 +10,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.taskshabits.R
 import com.example.taskshabits.data.Habits
-import com.example.taskshabits.util.HabitsCallback
-import java.util.*
+import com.example.taskshabits.util.HabitsDiffCallback
 
 class HabitsAdapter :RecyclerView.Adapter<HabitsAdapter.ViewHolder>(){
 
@@ -43,7 +42,7 @@ class HabitsAdapter :RecyclerView.Adapter<HabitsAdapter.ViewHolder>(){
 
 
     fun setHabits(habits : List<Habits>) {
-        val diffUtil = HabitsCallback(mHabitsList, habits)
+        val diffUtil = HabitsDiffCallback(mHabitsList, habits)
         val diffResult = DiffUtil.calculateDiff(diffUtil)
         this.mHabitsList = habits
         diffResult.dispatchUpdatesTo(this)

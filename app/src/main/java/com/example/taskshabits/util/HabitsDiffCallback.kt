@@ -3,7 +3,7 @@ package com.example.taskshabits.util
 import androidx.recyclerview.widget.DiffUtil
 import com.example.taskshabits.data.Habits
 
-class HabitsCallback(
+class HabitsDiffCallback(
     private val oldList: List<Habits>,
     private val newList: List<Habits>
 ) : DiffUtil.Callback(){
@@ -22,15 +22,5 @@ class HabitsCallback(
 
     override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
         return false
-//        return when {
-//            oldList[oldItemPosition].id != newList[newItemPosition].id -> {false}
-//
-//            // oldList[oldItemPosition].cardTitle != newList[newItemPosition].cardTitle -> {false}
-//            // Image and daysCount can be same
-//            // oldList[oldItemPosition].cardDaysCount != newList[newItemPosition].cardDaysCount -> {false}
-//            // oldList[oldItemPosition].cardImage != newList[newItemPosition].cardImage -> {false}
-//
-//            else -> true
-//        }
     }
 }

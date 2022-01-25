@@ -40,7 +40,7 @@
         android:text="Wednesday, 25 Jan 2022" />
 
     <TextView
-        android:id="@+id/task_priority"
+        android:id="@+id/tv_task_priority"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
