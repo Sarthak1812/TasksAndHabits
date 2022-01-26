@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.room.*
 import com.example.taskshabits.util.DateTypeConverter
 
-@Database(entities = [Habits::class, Tasks::class], version = 2, exportSchema = false)
+@Database(entities = [Habits::class, Tasks::class], version = 1, exportSchema = false)
 @TypeConverters(DateTypeConverter::class)
 abstract class MyDatabase : RoomDatabase() {
 
@@ -27,7 +27,7 @@ abstract class MyDatabase : RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     MyDatabase::class.java,
-                    "db_habits"
+                    "database_tasks_habits"
                 ).build()
                 INSTANCE = instance
                 return instance
