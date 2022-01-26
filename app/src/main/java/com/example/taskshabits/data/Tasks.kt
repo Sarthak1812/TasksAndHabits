@@ -11,7 +11,6 @@ data class Tasks(
     @ColumnInfo(name = "TITLE") val title: String,
     @ColumnInfo(name = "DESCRIPTION") val description: String,
     @ColumnInfo(name = "DUE_DATE") val dueDate: Date,
-    @ColumnInfo(name = "PRIORITY") val priority: Int,
-    @ColumnInfo(name = "NOTIFY") val notify: Boolean,
-    @ColumnInfo(name = "NOTIFY_ID") val notifyId: String
+    @ColumnInfo(name = "PRIORITY") val priority: String,
+    @ColumnInfo(name = "NOTIFY") val notify: Boolean
 )

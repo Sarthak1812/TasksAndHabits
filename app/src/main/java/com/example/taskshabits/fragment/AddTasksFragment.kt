@@ -1,6 +1,7 @@
 package com.example.taskshabits.fragment
 
 import android.os.Bundle
+import android.text.TextUtils
 import android.text.format.DateFormat
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -8,12 +9,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.lifecycle.ViewModelProvider
 import com.example.taskshabits.R
+import com.example.taskshabits.data.Tasks
+import com.example.taskshabits.util.TasksViewModel
 import com.google.android.material.textfield.TextInputLayout
 import java.text.SimpleDateFormat
 import java.util.*
 
 class AddTasksFragment : Fragment() {
+
+    private lateinit var mTasksViewModel: TasksViewModel
 
     private lateinit var titleET: TextInputLayout
     private lateinit var dateTimeTV: TextView
@@ -23,6 +29,7 @@ class AddTasksFragment : Fragment() {
     private lateinit var addBtn: Button
     private lateinit var cancelBtn: Button
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -31,6 +38,8 @@ class AddTasksFragment : Fragment() {
         val rootView = inflater.inflate(R.layout.fragment_add_tasks, container, false)
 
         initView(rootView)
+
+        mTasksViewModel = ViewModelProvider(this).get(TasksViewModel::class.java)
 
         val currentDateTime = DateFormat.format("EE, MMM dd, yyyy hh:mm aa", Date())
         dateTimeTV.text = currentDateTime
@@ -63,6 +72,35 @@ class AddTasksFragment : Fragment() {
     }
 
     private fun insertTaskToDb() {
+
+        // Data from user
+        val taskTitle = titleET.editText?.text.toString()
+        val taskDesc = descET.editText?.text.toString()
+        val taskDateTime =  dateTimeTV.text
+        val prioritySelected = autoCompletePriorityTv.text.toString()
+
+        if (!TextUtils.isEmpty(taskTitle) && !TextUtils.isEmpty(taskDesc)){
+
+            // Add to database
+            mTasksViewModel.addTask(Tasks(0, taskTitle, taskDesc, Date(), prioritySelected, false))
+            Toast.makeText(context, "Added", Toast.LENGTH_SHORT).show()
+
+            parentFragmentManager.popBackStack()
+        }
+        else if (TextUtils.isEmpty(taskTitle)) {
+            titleET.isErrorEnabled = true
+            titleET.error = "Incomplete field"
+        }
+        else if (TextUtils.isEmpty(taskDesc)) {
+            descET.isErrorEnabled = true
+            descET.error = "Incomplete field"
+        }
+        else {
+            titleET.isErrorEnabled = true
+            titleET.error = "Incomplete field"
+            descET.isErrorEnabled = true
+            descET.error = "Incomplete field"
+        }
 
     }
 

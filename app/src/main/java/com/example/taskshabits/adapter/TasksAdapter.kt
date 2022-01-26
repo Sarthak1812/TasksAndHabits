@@ -30,7 +30,7 @@ class TasksAdapter :RecyclerView.Adapter<TasksAdapter.ViewHolder>() {
         val tasksItemViewModel = mTasksList[position]
         holder.taskTitle.text = tasksItemViewModel.title
         holder.taskDate.text = DateFormat.format("EEEE, MMM, dd, yyyy", tasksItemViewModel.dueDate)
-        holder.taskPriority.text = tasksItemViewModel.priority.toString()
+        holder.taskPriority.text = tasksItemViewModel.priority
     }
 
     override fun getItemCount(): Int {
