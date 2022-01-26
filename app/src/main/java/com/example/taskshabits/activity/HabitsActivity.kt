@@ -40,7 +40,6 @@ class HabitsActivity : AppCompatActivity() {
 
         // habits card item onClick listener
         habitsAdapter.mHabitsItemClick = { habits ->
-//            Log.d("manage", habits.cardDateLastCompleted.time.toString())
             val habitsManageDialogFragment = ManageHabitsDialogFragment()
 
             //Bundle to pass data
