@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/My Android Studio Projects/TasksHabits/app/src/main/res/drawable/bg_priority_indicator.xml" value="0.20092592592592592" />
         <entry key="..\:/My Android Studio Projects/TasksHabits/app/src/main/res/drawable/ic_add_24.xml" value="0.20185185185185187" />
         <entry key="..\:/My Android Studio Projects/TasksHabits/app/src/main/res/drawable/ic_habits_meditate_yoga.xml" value="0.20185185185185187" />
+        <entry key="..\:/My Android Studio Projects/TasksHabits/app/src/main/res/drawable/ic_rectangle.xml" value="0.20092592592592592" />
         <entry key="..\:/My Android Studio Projects/TasksHabits/app/src/main/res/drawable/ic_tag_icon.xml" value="0.20185185185185187" />
         <entry key="..\:/My Android Studio Projects/TasksHabits/app/src/main/res/drawable/ic_tags_default_target.xml" value="0.20185185185185187" />
         <entry key="..\:/My Android Studio Projects/TasksHabits/app/src/main/res/drawable/ic_tags_target.xml" value="0.20185185185185187" />

@@ -1,5 +1,6 @@
 package com.example.taskshabits.adapter
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -30,7 +31,19 @@ class TasksAdapter :RecyclerView.Adapter<TasksAdapter.ViewHolder>() {
         val tasksItemViewModel = mTasksList[position]
         holder.taskTitle.text = tasksItemViewModel.title
         holder.taskDate.text = DateFormat.format("EEEE, MMM, dd, yyyy", tasksItemViewModel.dueDate)
-        holder.taskPriority.text = tasksItemViewModel.priority
+        setTaskPriorityColor(holder, tasksItemViewModel.priority)
+    }
+
+    private fun setTaskPriorityColor(holder: ViewHolder, priority: String) {
+        when(priority){
+            "HIGH" -> holder.taskPriority.setBackgroundColor(Color.parseColor("#FF0000"))
+            "MEDIUM" -> holder.taskPriority.setBackgroundColor(Color.parseColor("#008080"))
+            "LOW" -> holder.taskPriority.setBackgroundColor(Color.parseColor("#999999"))
+
+            else -> {
+                holder.taskPriority.setBackgroundColor(Color.parseColor("#689F38"))
+            }
+        }
     }
 
     override fun getItemCount(): Int {
@@ -48,7 +61,7 @@ class TasksAdapter :RecyclerView.Adapter<TasksAdapter.ViewHolder>() {
         val taskCheckbox: MaterialCheckBox = itemView.findViewById(R.id.mcb_task_card_checkbox)
         val taskTitle: TextView = itemView.findViewById(R.id.tv_tasks_card_title)
         val taskDate: TextView = itemView.findViewById(R.id.tv_tasks_card_date)
-        val taskPriority: TextView = itemView.findViewById(R.id.tv_task_priority)
+        val taskPriority: View = itemView.findViewById(R.id.view_task_priority)
 
         // on item click
         init {

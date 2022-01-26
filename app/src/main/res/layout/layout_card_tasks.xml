@@ -7,7 +7,8 @@
     android:clickable="true"
     android:focusable="true"
     app:cardElevation="8dp"
-    app:cardCornerRadius="8dp">
+    app:cardCornerRadius="8dp"
+    android:layout_marginTop="10dp">
 
     <com.google.android.material.checkbox.MaterialCheckBox
         android:id="@+id/mcb_task_card_checkbox"
@@ -18,38 +19,46 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp" />
 
-    <TextView
-        android:id="@+id/tv_tasks_card_title"
+    <LinearLayout
+        android:id="@+id/ll_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@id/mcb_task_card_checkbox"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="4dp"
-        android:text="Title"
-        android:textSize="20sp" />
+        android:orientation="horizontal">
+
+        <View
+            android:id="@+id/view_task_priority"
+            android:layout_width="8dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="4dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_tasks_card_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginBottom="4dp"
+            android:text="Title"
+            android:textSize="20sp" />
+
+
+    </LinearLayout>
+    
 
     <TextView
         android:id="@+id/tv_tasks_card_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toEndOf="@id/mcb_task_card_checkbox"
-        android:layout_below="@id/tv_tasks_card_title"
+        android:layout_below="@id/ll_title"
         android:layout_marginTop="4dp"
         android:layout_marginBottom="8dp"
         android:text="Wednesday, 25 Jan 2022" />
 
-    <TextView
-        android:id="@+id/tv_task_priority"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="4dp"
-        android:layout_marginHorizontal="8dp"
-        android:layout_toEndOf="@id/tv_tasks_card_title"
-        android:gravity="end"
-        android:text="HIGH" />
 
 
 </RelativeLayout>
