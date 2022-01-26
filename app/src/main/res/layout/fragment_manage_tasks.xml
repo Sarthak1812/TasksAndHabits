@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.ManageTasksFragment">
+
+
+    <TextView
+        android:id="@+id/tv_frag_manage_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_margin="16dp"
+        android:text="Manage Task"
+        android:textSize="24sp"
+        android:textStyle="bold"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/et_frag_manage_task_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/tv_frag_manage_title"
+        android:layout_marginHorizontal="12dp"
+        android:hint="Task Title"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:maxLines="1"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Set date and time -->
+    <LinearLayout
+        android:id="@+id/ll_datetime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/et_frag_manage_task_title"
+        android:layout_margin="12dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="0.25">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Choose Task Date and Time:- "
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/tv_frag_manage_task_datetime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text=""
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/ib_frag_task_manage_datetime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_menu_my_calendar"
+            android:layout_weight="0.75"
+            android:contentDescription="Date and Time Select" />
+
+    </LinearLayout>
+
+    <!-- set priority -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/dropdown_menu_tasks_priority"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/ll_datetime"
+        android:layout_margin="10dp"
+        android:hint="Choose Priority"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+
+        <AutoCompleteTextView
+            android:id="@+id/autoComplete_manage_priority"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:inputType="none"
+            android:text=""/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/et_frag_manage_task_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/dropdown_menu_tasks_priority"
+        android:layout_margin="12dp"
+        android:hint="Description">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="200dp"
+            android:textSize="16sp"
+            android:inputType="textMultiLine" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <!-- Save and cancel buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="12dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_frag_manage_task_delete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="18dp"
+            android:text="DELETE TASK"
+            android:layout_weight="0.5"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+        <Button
+            android:id="@+id/btn_frag_manage_task_update"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="18dp"
+            android:text="UPDATE TASK"
+            android:layout_weight="0.5"
+            style="@style/Widget.MaterialComponents.Button"/>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

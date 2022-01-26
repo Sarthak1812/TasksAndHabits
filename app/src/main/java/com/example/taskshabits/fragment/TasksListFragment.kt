@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -42,7 +43,21 @@ class TasksListFragment : Fragment() {
         })
 
 
+        // tasks onClick listener
+        tasksAdapter.mTasksItemClick = { tasks ->
 
+            // Bundle to pass data
+            val bundle = Bundle()
+            bundle.putInt("Id", tasks.id)
+            bundle.putString("title", tasks.title)
+            bundle.putLong("dateTime", tasks.dueDate.time)
+            bundle.putString("desc", tasks.description)
+            bundle.putString("priority", tasks.priority)
+            bundle.putBoolean("notify", tasks.notify)
+
+            findNavController().navigate(R.id.action_tasksListFragment_to_manageTasksFragment, bundle)
+
+        }
 
 
         addTasksFAB.setOnClickListener {
