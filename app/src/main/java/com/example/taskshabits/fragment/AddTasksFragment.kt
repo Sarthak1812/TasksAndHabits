@@ -1,5 +1,7 @@
 package com.example.taskshabits.fragment
 
+import android.app.DatePickerDialog
+import android.app.TimePickerDialog
 import android.os.Bundle
 import android.text.TextUtils
 import android.text.format.DateFormat
@@ -29,6 +31,7 @@ class AddTasksFragment : Fragment() {
     private lateinit var addBtn: Button
     private lateinit var cancelBtn: Button
 
+    private var taskDateTime: Date = Date()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,14 +44,18 @@ class AddTasksFragment : Fragment() {
 
         mTasksViewModel = ViewModelProvider(this).get(TasksViewModel::class.java)
 
-        val currentDateTime = DateFormat.format("EE, MMM dd, yyyy hh:mm aa", Date())
-        dateTimeTV.text = currentDateTime
+        // set current time and date initially
+        dateTimeTV.text = DateFormat.format("EE, MMM dd, yyyy hh:mm aa", taskDateTime)
 
         // Array Adapter using string-array
         val priorities = resources.getStringArray(R.array.tasks_priority_array)
         val prioritiesArrayAdapter = ArrayAdapter(requireContext(), R.layout.dropdownmenu_item, priorities)
         autoCompletePriorityTv.setAdapter(prioritiesArrayAdapter)
 
+        // pick date and time
+        dateTimeIB.setOnClickListener {
+            pickDateTime()
+        }
 
         addBtn.setOnClickListener {
             insertTaskToDb()
@@ -71,18 +78,44 @@ class AddTasksFragment : Fragment() {
         cancelBtn = rootView.findViewById(R.id.btn_frag_add_task_cancel)
     }
 
+
+    private fun pickDateTime() {
+        val currentDateTime = Calendar.getInstance()
+        val startYear = currentDateTime.get(Calendar.YEAR)
+        val startMonth = currentDateTime.get(Calendar.MONTH)
+        val startDay = currentDateTime.get(Calendar.DAY_OF_MONTH)
+        val startHour = currentDateTime.get(Calendar.HOUR_OF_DAY)
+        val startMinute = currentDateTime.get(Calendar.MINUTE)
+
+        // DatePicker
+        DatePickerDialog(requireContext(), DatePickerDialog.OnDateSetListener{ _, year, month, day ->
+
+            // TimePicker
+            TimePickerDialog(requireContext(), TimePickerDialog.OnTimeSetListener{ _, hour, minute ->
+
+                val pickedDateTime = Calendar.getInstance()
+                pickedDateTime.set(year, month, day, hour, minute)
+                // set to textView
+                taskDateTime = pickedDateTime.time
+                dateTimeTV.text = DateFormat.format("EE, MMM dd, yyyy hh:mm aa", pickedDateTime)
+            }, startHour, startMinute, false).show()
+
+        }, startYear, startMonth, startDay).show()
+    }
+
+
+
     private fun insertTaskToDb() {
 
         // Data from user
         val taskTitle = titleET.editText?.text.toString()
         val taskDesc = descET.editText?.text.toString()
-        val taskDateTime =  dateTimeTV.text
         val prioritySelected = autoCompletePriorityTv.text.toString()
 
         if (!TextUtils.isEmpty(taskTitle) && !TextUtils.isEmpty(taskDesc)){
 
             // Add to database
-            mTasksViewModel.addTask(Tasks(0, taskTitle, taskDesc, Date(), prioritySelected, false))
+            mTasksViewModel.addTask(Tasks(0, taskTitle, taskDesc, taskDateTime, prioritySelected, false))
             Toast.makeText(context, "Added", Toast.LENGTH_SHORT).show()
 
             parentFragmentManager.popBackStack()
