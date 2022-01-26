@@ -1,14 +1,20 @@
 <resources>
     <string name="app_name">Tasks&amp;Habits</string>
 
-    <!-- Populating Tags for DropDownMenu-->
+    <!-- Populating Habit Tags for DropDownMenu-->
     <string-array name="habits_tag_array">
         <item>Workout/Fitness</item>
         <item>Work/Task</item>
         <item>Yoga/Meditation</item>
         <item>Default-Target</item>
     </string-array>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <!-- Populating Task Priorities for DropDownMenu-->
+    <string-array name="tasks_priority_array">
+        <item>HIGH</item>
+        <item>MEDIUM</item>
+        <item>LOW</item>
+    </string-array>
 
 </resources>
