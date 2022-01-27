@@ -15,6 +15,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.taskshabits.R
 import com.example.taskshabits.data.Tasks
 import com.example.taskshabits.util.TasksViewModel
+import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputLayout
 import java.text.SimpleDateFormat
 import java.util.*
@@ -28,8 +29,8 @@ class AddTasksFragment : Fragment() {
     private lateinit var dateTimeIB: ImageButton
     private lateinit var autoCompletePriorityTv: AutoCompleteTextView
     private lateinit var descET: TextInputLayout
-    private lateinit var addBtn: Button
-    private lateinit var cancelBtn: Button
+    private lateinit var addBtn: MaterialButton
+    private lateinit var cancelBtn: MaterialButton
 
     private var taskDateTime: Date = Date()
 

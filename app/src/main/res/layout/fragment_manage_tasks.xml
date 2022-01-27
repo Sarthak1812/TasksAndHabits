@@ -137,8 +137,7 @@
             android:layout_marginHorizontal="18dp"
             android:text="DELETE TASK"
             android:layout_weight="0.5"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
-
+            style="@style/CustomOutLineButton"/>
         <Button
             android:id="@+id/btn_frag_manage_task_update"
             android:layout_width="match_parent"
