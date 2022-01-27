@@ -1,6 +1,5 @@
 package com.example.taskshabits.adapter
 
-import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +11,7 @@ import com.example.taskshabits.data.Tasks
 import com.example.taskshabits.util.TasksDiffCallback
 import com.google.android.material.checkbox.MaterialCheckBox
 import android.text.format.DateFormat
+import android.widget.ImageView
 
 class TasksAdapter :RecyclerView.Adapter<TasksAdapter.ViewHolder>() {
 
@@ -30,18 +30,18 @@ class TasksAdapter :RecyclerView.Adapter<TasksAdapter.ViewHolder>() {
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val tasksItemViewModel = mTasksList[position]
         holder.taskTitle.text = tasksItemViewModel.title
-        holder.taskDate.text = DateFormat.format("EEEE, MMM, dd, yyyy", tasksItemViewModel.dueDate)
+        holder.taskDate.text = DateFormat.format("EE, MMM dd, yyyy hh:mm aa", tasksItemViewModel.dueDate)
         setTaskPriorityColor(holder, tasksItemViewModel.priority)
     }
 
     private fun setTaskPriorityColor(holder: ViewHolder, priority: String) {
         when(priority){
-            "HIGH" -> holder.taskPriority.setBackgroundColor(Color.parseColor("#FF0000"))
-            "MEDIUM" -> holder.taskPriority.setBackgroundColor(Color.parseColor("#008080"))
-            "LOW" -> holder.taskPriority.setBackgroundColor(Color.parseColor("#999999"))
+            "HIGH" -> holder.taskPriority.setImageResource(R.drawable.bg_priority_high)
+            "MEDIUM" -> holder.taskPriority.setImageResource(R.drawable.bg_priority_medium)
+            "LOW" -> holder.taskPriority.setImageResource(R.drawable.bg_priority_low)
 
             else -> {
-                holder.taskPriority.setBackgroundColor(Color.parseColor("#689F38"))
+                holder.taskPriority.setImageResource(R.drawable.bg_priority_medium)
             }
         }
     }
@@ -61,7 +61,7 @@ class TasksAdapter :RecyclerView.Adapter<TasksAdapter.ViewHolder>() {
         val taskCheckbox: MaterialCheckBox = itemView.findViewById(R.id.mcb_task_card_checkbox)
         val taskTitle: TextView = itemView.findViewById(R.id.tv_tasks_card_title)
         val taskDate: TextView = itemView.findViewById(R.id.tv_tasks_card_date)
-        val taskPriority: View = itemView.findViewById(R.id.view_task_priority)
+        val taskPriority: ImageView = itemView.findViewById(R.id.iv_task_priority)
 
         // on item click
         init {
