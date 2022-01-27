@@ -13,7 +13,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.taskshabits.R
 import com.example.taskshabits.data.Habits
 import com.example.taskshabits.data.Tasks
@@ -134,7 +136,7 @@ class ManageTasksFragment : Fragment() {
             mTasksViewModel.updateTask(Tasks(taskId, taskTitle, taskDesc, taskDateTimeUpdated, prioritySelected))
             Toast.makeText(context, "Updated", Toast.LENGTH_SHORT).show()
 
-            parentFragmentManager.popBackStack()
+            findNavController().navigate(R.id.action_manageTasksFragment_to_tasksListFragment)
         }
         else if (TextUtils.isEmpty(taskTitle)) {
             titleManageET.isErrorEnabled = true
@@ -164,6 +166,8 @@ class ManageTasksFragment : Fragment() {
             // Delete Task from DB
             mTasksViewModel.deleteTask(Tasks(taskId, taskTitle, taskDesc, taskDateTimeUpdated, taskPriority))
             Toast.makeText(context, "Deleted", Toast.LENGTH_SHORT).show()
+
+            findNavController().navigate(R.id.action_manageTasksFragment_to_tasksListFragment)
         }
 
         alertBuilder.setNegativeButton("NO"){ dialog, which -> }

@@ -11,10 +11,14 @@
         tools:layout="@layout/fragment_tasks_list" >
         <action
             android:id="@+id/action_tasksListFragment_to_addTasksFragment"
-            app:destination="@id/addTasksFragment" />
+            app:destination="@id/addTasksFragment"
+            app:popUpTo="@+id/tasksListFragment"
+            />
         <action
             android:id="@+id/action_tasksListFragment_to_manageTasksFragment"
-            app:destination="@id/manageTasksFragment" />
+            app:destination="@id/manageTasksFragment"
+            app:popUpTo="@+id/tasksListFragment"
+            />
     </fragment>
     <fragment
         android:id="@+id/addTasksFragment"
@@ -23,7 +27,9 @@
         tools:layout="@layout/fragment_add_tasks" >
         <action
             android:id="@+id/action_addTasksFragment_to_tasksListFragment"
-            app:destination="@id/tasksListFragment" />
+            app:destination="@id/tasksListFragment"
+            app:popUpTo="@+id/tasksListFragment"
+            />
     </fragment>
     <fragment
         android:id="@+id/manageTasksFragment"
@@ -32,6 +38,8 @@
         tools:layout="@layout/fragment_manage_tasks" >
         <action
             android:id="@+id/action_manageTasksFragment_to_tasksListFragment"
-            app:destination="@id/tasksListFragment" />
+            app:destination="@id/tasksListFragment"
+            app:popUpTo="@+id/tasksListFragment"
+            />
     </fragment>
 </navigation>

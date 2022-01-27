@@ -11,7 +11,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.taskshabits.R
 import com.example.taskshabits.data.Tasks
 import com.example.taskshabits.util.TasksViewModel
@@ -63,7 +65,7 @@ class AddTasksFragment : Fragment() {
         }
 
         cancelBtn.setOnClickListener {
-            parentFragmentManager.popBackStack()
+            findNavController().navigate(R.id.action_addTasksFragment_to_tasksListFragment)
         }
 
         return rootView
@@ -119,7 +121,7 @@ class AddTasksFragment : Fragment() {
             mTasksViewModel.addTask(Tasks(0, taskTitle, taskDesc, taskDateTime, prioritySelected))
             Toast.makeText(context, "Added", Toast.LENGTH_SHORT).show()
 
-            parentFragmentManager.popBackStack()
+            findNavController().navigate(R.id.action_addTasksFragment_to_tasksListFragment)
         }
         else if (TextUtils.isEmpty(taskTitle)) {
             titleET.isErrorEnabled = true

@@ -6,9 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.FragmentNavigator
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -32,6 +34,7 @@ class TasksListFragment : Fragment() {
         val rootView =  inflater.inflate(R.layout.fragment_tasks_list, container, false)
 
         initViews(rootView)
+
 
         // Recycler View Setup
         val tasksRV: RecyclerView = rootView.findViewById(R.id.rv_tasks)
@@ -83,6 +86,7 @@ class TasksListFragment : Fragment() {
         addTasksFAB = rootView.findViewById(R.id.fab_tasks_add)
 
     }
+
 
 
 
