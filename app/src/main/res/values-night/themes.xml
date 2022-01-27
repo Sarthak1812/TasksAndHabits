@@ -2,12 +2,12 @@
     <!-- Base application theme. -->
     <style name="Theme.TasksHabits" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/pale_orange</item>
+        <item name="colorPrimary">@color/vivid_pink</item>
         <item name="colorPrimaryVariant">@color/vivid_pink</item>
         <item name="colorOnPrimary">@color/black</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="colorSecondary">@color/vivid_pink</item>
+        <item name="colorSecondaryVariant">@color/vivid_pink_secondary</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
@@ -15,7 +15,7 @@
         <item name="android:textColor">@color/white</item>
     </style>
     <style name="CustomOutLineButton" parent="Widget.MaterialComponents.Button.OutlinedButton" >
-        <item name="strokeColor">@color/pale_orange</item>
+        <item name="strokeColor">@color/vivid_pink</item>
         <item name="strokeWidth">1dp</item>
     </style>
 </resources>
