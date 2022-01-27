@@ -39,7 +39,6 @@ class ManageTasksFragment : Fragment() {
     private var taskDateTime: Long = 0
     private lateinit var taskDesc:String
     private lateinit var taskPriority: String
-    private var taskNotify: Boolean = false
 
     private lateinit var taskDateTimeUpdated: Date
 
@@ -60,7 +59,6 @@ class ManageTasksFragment : Fragment() {
         taskDateTime = arguments?.getLong("dateTime", 0)!!
         taskDesc = arguments?.getString("desc", "").toString()
         taskPriority = arguments?.getString("priority", "").toString()
-        taskNotify = arguments?.getBoolean("notify", false) == true
 
         titleManageET.editText?.text = Editable.Factory.getInstance().newEditable(taskTitle)
         descManageET.editText?.text = Editable.Factory.getInstance().newEditable(taskDesc)
@@ -133,7 +131,7 @@ class ManageTasksFragment : Fragment() {
         if (!TextUtils.isEmpty(taskTitle) && !TextUtils.isEmpty(taskDesc)){
 
             // Add to database
-            mTasksViewModel.updateTask(Tasks(taskId, taskTitle, taskDesc, taskDateTimeUpdated, prioritySelected, false))
+            mTasksViewModel.updateTask(Tasks(taskId, taskTitle, taskDesc, taskDateTimeUpdated, prioritySelected))
             Toast.makeText(context, "Updated", Toast.LENGTH_SHORT).show()
 
             parentFragmentManager.popBackStack()
@@ -164,7 +162,7 @@ class ManageTasksFragment : Fragment() {
 
         alertBuilder.setPositiveButton("YES"){ dialog , which ->
             // Delete Task from DB
-            mTasksViewModel.deleteTask(Tasks(taskId, taskTitle, taskDesc, taskDateTimeUpdated, taskPriority, taskNotify))
+            mTasksViewModel.deleteTask(Tasks(taskId, taskTitle, taskDesc, taskDateTimeUpdated, taskPriority))
             Toast.makeText(context, "Deleted", Toast.LENGTH_SHORT).show()
         }
 

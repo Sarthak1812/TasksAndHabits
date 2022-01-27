@@ -115,7 +115,7 @@ class AddTasksFragment : Fragment() {
         if (!TextUtils.isEmpty(taskTitle) && !TextUtils.isEmpty(taskDesc)){
 
             // Add to database
-            mTasksViewModel.addTask(Tasks(0, taskTitle, taskDesc, taskDateTime, prioritySelected, false))
+            mTasksViewModel.addTask(Tasks(0, taskTitle, taskDesc, taskDateTime, prioritySelected))
             Toast.makeText(context, "Added", Toast.LENGTH_SHORT).show()
 
             parentFragmentManager.popBackStack()

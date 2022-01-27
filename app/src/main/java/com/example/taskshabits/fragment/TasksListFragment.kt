@@ -55,7 +55,6 @@ class TasksListFragment : Fragment() {
             bundle.putLong("dateTime", tasks.dueDate.time)
             bundle.putString("desc", tasks.description)
             bundle.putString("priority", tasks.priority)
-            bundle.putBoolean("notify", tasks.notify)
 
             findNavController().navigate(R.id.action_tasksListFragment_to_manageTasksFragment, bundle)
 
