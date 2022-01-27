@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
@@ -15,6 +16,7 @@ import com.example.taskshabits.R
 import com.example.taskshabits.adapter.TasksAdapter
 import com.example.taskshabits.util.TasksViewModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.snackbar.Snackbar
 
 class TasksListFragment : Fragment() {
 
@@ -56,6 +58,16 @@ class TasksListFragment : Fragment() {
             bundle.putBoolean("notify", tasks.notify)
 
             findNavController().navigate(R.id.action_tasksListFragment_to_manageTasksFragment, bundle)
+
+        }
+
+        // checkbox onClick listener = task completed
+        tasksAdapter.checkBoxOnClick = { tasks ->
+
+            // Deleting completed task
+            mTasksViewModel.deleteTask(tasks)
+
+            Toast.makeText(context, "🎉 Task Completed 👏🏻", Toast.LENGTH_SHORT).show()
 
         }
 

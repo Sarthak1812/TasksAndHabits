@@ -19,6 +19,7 @@ class TasksAdapter :RecyclerView.Adapter<TasksAdapter.ViewHolder>() {
 
     var mTasksItemClick: ((Tasks)-> Unit)? = null
 
+    var checkBoxOnClick: ((Tasks)-> Unit)? = null
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -67,6 +68,10 @@ class TasksAdapter :RecyclerView.Adapter<TasksAdapter.ViewHolder>() {
         init {
             itemView.setOnClickListener{
                 mTasksItemClick?.invoke(mTasksList[adapterPosition])
+            }
+
+            taskCheckbox.setOnClickListener {
+                checkBoxOnClick?.invoke(mTasksList[adapterPosition])
             }
         }
     }
