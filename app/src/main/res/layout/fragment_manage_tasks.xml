@@ -73,8 +73,9 @@
             android:id="@+id/ib_frag_task_manage_datetime"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@android:drawable/ic_menu_my_calendar"
+            android:src="@drawable/ic_icons_calendar"
             android:layout_weight="0.75"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:contentDescription="Date and Time Select" />
 
     </LinearLayout>
