@@ -10,18 +10,19 @@ A simple efficient solution for users to create, edit, delete **tasks** and **ha
 ## Screenshots
 
 <div style="display:inline; align:center;">
-<img src="/photos/main_screen_light.png" alt="Main Screen Light" height="420px">
+    <img src="/photos/main_screen_light.png" alt="Main Screen Light" height="420px">
+    <img src="/photos/main_screen.png" alt="Main Screen Dark" height="420px">
 </div>
 
-<!-- ![Main](https://github.com/Sarthak1812/TasksAndHabits/blob/master/photos/main_screen_light.png "Light Themed Main Activity") &nbsp; &nbsp; ![DarkMain](https://github.com/Sarthak1812/TasksAndHabits/blob/master/photos/main_screen.png "Dark Themed Main Activity")  
+<div style="display:inline; align:center;">
+    <img src="/photos/tasks_main_light.png" alt="Tasks Fragment" height="420px">
+    <img src="/photos/tasks_manage.png" alt="Manage Task Fragment" height="420px">
+</div>
 
-![TaskMain](https://github.com/Sarthak1812/TasksAndHabits/blob/master/photos/tasks_main_light.png "Task Activity") &nbsp; &nbsp; ![TaskManage](https://github.com/Sarthak1812/TasksAndHabits/blob/master/photos/tasks_manage.png "Task Manage Activity") 
-
-![HabitMain](https://github.com/Sarthak1812/TasksAndHabits/blob/master/photos/habits_main_light.png "Habits Activity") &nbsp; &nbsp; ![HabitMain](https://github.com/Sarthak1812/TasksAndHabits/blob/master/photos/habits_manage.png "Habits Activity")  -->
-
-<!-- ![TodoList Activity](https://github.com/tachyonlabs/Todo-App-to-practice-for-the-Google-Associate-Android-Developer-Certification-Exam/blob/master/TodoListActivity.png "TodoList Activity") &nbsp; &nbsp; ![Settings Activity](https://github.com/tachyonlabs/Todo-App-to-practice-for-the-Google-Associate-Android-Developer-Certification-Exam/blob/master/SettingsActivity.png "Settings Activity") &nbsp; &nbsp; ![Adding a new task](https://github.com/tachyonlabs/Todo-App-to-practice-for-the-Google-Associate-Android-Developer-Certification-Exam/blob/master/adding-a-new-task.png "Adding a new task") -->
-
-<!-- <img src="https://github.com/gheorghedarle/Xamarin-ToDoApp/blob/main/Screenshots/dark_mode.png?raw=true" Width="1620" /> -->
+<div style="display:inline; align:center;">
+    <img src="/photos/habits_main_light.png" alt="Habit Activity" height="420px">
+    <img src="/photos/habits_manage.png" alt="Manage Habit Dialog" height="420px">
+</div>
 
 ## MAD Score
 ![summary](/photos/mad_summary.png)
@@ -36,13 +37,16 @@ A simple efficient solution for users to create, edit, delete **tasks** and **ha
 - [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) - To Store UI-related data that isnt destroyed on UI changes.
 - [RecylerView](https://developer.android.com/guide/topics/ui/layout/recyclerview) - To Display data in a list format.
 - [Material-Components](https://github.com/material-components/material-components-android) - Material design components TextInputLayout, buttons
+- [Lottie Animations](https://github.com/airbnb/lottie-android) - Lightweight, scalable animations
 
 ## Architecture
 Tasks&Habits is based on the MVVM architecture and the Repository pattern.
 
-![architecture]
+![architecture](/photos/architecture.png)
 
 
 ## Resources
 
-Illustrations are from [Icons8](https://icons8.com/illustrations/style--3d-flame)
+- Illustrations are from [IconScout](https://iconscout.com/)
+- Animations are from [LottieFiles](https://lottiefiles.com/)
+
