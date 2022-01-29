@@ -214,6 +214,7 @@ class ManageHabitsDialogFragment : DialogFragment(){
             // Delete Habit from DB
             mHabitsViewModel.deleteHabit(Habits(habitId, title, daysGoal, daysComplete, Date(dateStored), habitTag))
             Toast.makeText(context, "Deleted Habit", Toast.LENGTH_SHORT).show()
+            dismiss()
         }
 
         alertBuilder.setNegativeButton("NO"){ dialog, which -> }
