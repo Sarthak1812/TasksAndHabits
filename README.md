@@ -4,20 +4,20 @@
 
 A Task Management and Habit-building App, representating my journey in Android as well as my first Kotlin App. 
 
-<!-- #### Made with ❤️ <i style="font-size: 12px;">and</i>  -->
-
-
-
 A simple efficient solution for users to create, edit, delete **tasks** and **habits** and assign them colored task tags and and distinguisable habit images. The app is available in both light and  dark mode.
 
 
 ## Screenshots
 
-![Main](https://github.com/Sarthak1812/TasksAndHabits/blob/master/photos/main_screen_light.png "Light Themed Main Activity") &nbsp; &nbsp; ![DarkMain](https://github.com/Sarthak1812/TasksAndHabits/blob/master/photos/main_screen.png "Dark Themed Main Activity")  
+<div style="display:inline; align:center;">
+<img src="/photos/main_screen_light.png" alt="Main Screen Light" height="420px">
+</div>
+
+<!-- ![Main](https://github.com/Sarthak1812/TasksAndHabits/blob/master/photos/main_screen_light.png "Light Themed Main Activity") &nbsp; &nbsp; ![DarkMain](https://github.com/Sarthak1812/TasksAndHabits/blob/master/photos/main_screen.png "Dark Themed Main Activity")  
 
 ![TaskMain](https://github.com/Sarthak1812/TasksAndHabits/blob/master/photos/tasks_main_light.png "Task Activity") &nbsp; &nbsp; ![TaskManage](https://github.com/Sarthak1812/TasksAndHabits/blob/master/photos/tasks_manage.png "Task Manage Activity") 
 
-![HabitMain](https://github.com/Sarthak1812/TasksAndHabits/blob/master/photos/habits_main_light.png "Habits Activity") &nbsp; &nbsp; ![HabitMain](https://github.com/Sarthak1812/TasksAndHabits/blob/master/photos/habits_manage.png "Habits Activity") 
+![HabitMain](https://github.com/Sarthak1812/TasksAndHabits/blob/master/photos/habits_main_light.png "Habits Activity") &nbsp; &nbsp; ![HabitMain](https://github.com/Sarthak1812/TasksAndHabits/blob/master/photos/habits_manage.png "Habits Activity")  -->
 
 <!-- ![TodoList Activity](https://github.com/tachyonlabs/Todo-App-to-practice-for-the-Google-Associate-Android-Developer-Certification-Exam/blob/master/TodoListActivity.png "TodoList Activity") &nbsp; &nbsp; ![Settings Activity](https://github.com/tachyonlabs/Todo-App-to-practice-for-the-Google-Associate-Android-Developer-Certification-Exam/blob/master/SettingsActivity.png "Settings Activity") &nbsp; &nbsp; ![Adding a new task](https://github.com/tachyonlabs/Todo-App-to-practice-for-the-Google-Associate-Android-Developer-Certification-Exam/blob/master/adding-a-new-task.png "Adding a new task") -->
 
