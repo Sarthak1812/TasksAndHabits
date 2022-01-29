@@ -4,7 +4,7 @@
 
 <a href="https://drive.google.com/file/d/1PfDWztT5zU51rtesNjYGKi6n5blfEP6q/view?usp=sharing"> 
 
-![Download](https://img.shields.io/badge/-Download-blue?style=social&logo=appveyor)
+![Download](https://img.shields.io/badge/-Download%20APK-blue?style=social&logo=appveyor)
 </a>
 
 A Task Management and Habit-building App, representating my journey in Android as well as my first Kotlin App. 🤗 ✨
