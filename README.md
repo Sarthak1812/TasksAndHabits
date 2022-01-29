@@ -2,12 +2,15 @@
     <b> Tasks&Habits</b> 
 </h1>
 
-A Task Management and Habit-building App, representating my journey in Android as well as my first Kotlin App. 
+A Task Management and Habit-building App, representating my journey in Android as well as my first Kotlin App. 🤗 ✨
+
+![Kotlin](https://img.shields.io/badge/kotlin-%230095D5.svg?style=for-the-badge&logo=kotlin&logoColor=white) 
+![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
 
 A simple efficient solution for users to create, edit, delete **tasks** and **habits** and assign them colored task tags and and distinguisable habit images. The app is available in both light and  dark mode.
 
 
-## Screenshots
+## 📱 Screenshots
 
 <div style="display:inline; align:center;">
     <img src="/photos/main_screen_light.png" alt="Main Screen Light" height="420px"> &nbsp;
@@ -45,7 +48,7 @@ Tasks&Habits is based on the MVVM architecture and the Repository pattern.
 ![architecture](/photos/architecture.png)
 
 
-## Resources
+## 🔗 Resources
 
 - Illustrations are from [IconScout](https://iconscout.com/)
 - Animations are from [LottieFiles](https://lottiefiles.com/)
