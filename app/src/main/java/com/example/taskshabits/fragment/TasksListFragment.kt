@@ -6,11 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.fragment.app.FragmentManager
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.Navigation
-import androidx.navigation.fragment.FragmentNavigator
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -18,7 +14,6 @@ import com.example.taskshabits.R
 import com.example.taskshabits.adapter.TasksAdapter
 import com.example.taskshabits.util.TasksViewModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 
 class TasksListFragment : Fragment() {
 
@@ -43,7 +38,7 @@ class TasksListFragment : Fragment() {
         tasksRV.layoutManager = LinearLayoutManager(context)
 
         mTasksViewModel = ViewModelProvider(this).get(TasksViewModel::class.java)
-        mTasksViewModel.allTasksData.observe(viewLifecycleOwner, Observer { tasks ->
+        mTasksViewModel.allTasksData.observe(viewLifecycleOwner, { tasks ->
             tasksAdapter.setTasks(tasks)
         })
 

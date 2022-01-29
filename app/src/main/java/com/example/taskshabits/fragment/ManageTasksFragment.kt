@@ -4,7 +4,6 @@ import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.os.Bundle
-import android.renderscript.RenderScript
 import android.text.Editable
 import android.text.TextUtils
 import android.text.format.DateFormat
@@ -13,11 +12,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.taskshabits.R
-import com.example.taskshabits.data.Habits
 import com.example.taskshabits.data.Tasks
 import com.example.taskshabits.util.TasksViewModel
 import com.google.android.material.textfield.TextInputLayout
@@ -108,10 +105,10 @@ class ManageTasksFragment : Fragment() {
         val startMinute = currentDateTime.get(Calendar.MINUTE)
 
         // DatePicker
-        DatePickerDialog(requireContext(), DatePickerDialog.OnDateSetListener{ _, year, month, day ->
+        DatePickerDialog(requireContext(), { _, year, month, day ->
 
             // TimePicker
-            TimePickerDialog(requireContext(), TimePickerDialog.OnTimeSetListener{ _, hour, minute ->
+            TimePickerDialog(requireContext(), { _, hour, minute ->
 
                 val pickedDateTime = Calendar.getInstance()
                 pickedDateTime.set(year, month, day, hour, minute)

@@ -2,8 +2,6 @@ package com.example.taskshabits.fragment
 
 import android.os.Bundle
 import android.text.TextUtils
-import android.transition.TransitionManager
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -101,7 +99,7 @@ class AddHabitsDialogFragment: DialogFragment(){
 
             // Add to database
             mHabitsViewModel.addHabit(Habits(0, habitTitle, habitMaxDay, 0, Date(), tagSelected))
-            Toast.makeText(context, "input = false", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Habit created", Toast.LENGTH_SHORT).show()
 
             dismiss()
 
