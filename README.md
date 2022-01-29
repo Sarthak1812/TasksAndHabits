@@ -13,7 +13,11 @@ A simple efficient solution for users to create, edit, delete **tasks** and **ha
 
 ## Screenshots
 
-![Main](https://github.com/Sarthak1812/TasksAndHabits/blob/master/photos/main_screen_light.png "Light Themed Main Activity") &nbsp; &nbsp; ![TaskMain](/https://github.com/Sarthak1812/TasksAndHabits/blob/master/photos/main_screen.png "Light Themed Task Activity") &nbsp; &nbsp; ![HabitMain](https://github.com/Sarthak1812/TasksAndHabits/blob/master/photos/habits_main_light.png "Light Themed Habit Activity")
+![Main](https://github.com/Sarthak1812/TasksAndHabits/blob/master/photos/main_screen_light.png "Light Themed Main Activity") &nbsp; &nbsp; ![DarkMain](https://github.com/Sarthak1812/TasksAndHabits/blob/master/photos/main_screen.png "Dark Themed Main Activity")  
+
+![TaskMain](https://github.com/Sarthak1812/TasksAndHabits/blob/master/photos/tasks_main_light.png "Task Activity") &nbsp; &nbsp; ![TaskManage](https://github.com/Sarthak1812/TasksAndHabits/blob/master/photos/tasks_manage.png "Task Manage Activity") 
+
+![HabitMain](https://github.com/Sarthak1812/TasksAndHabits/blob/master/photos/habits_main_light.png "Habits Activity") &nbsp; &nbsp; ![HabitMain](https://github.com/Sarthak1812/TasksAndHabits/blob/master/photos/habits_manage.png "Habits Activity") 
 
 <!-- ![TodoList Activity](https://github.com/tachyonlabs/Todo-App-to-practice-for-the-Google-Associate-Android-Developer-Certification-Exam/blob/master/TodoListActivity.png "TodoList Activity") &nbsp; &nbsp; ![Settings Activity](https://github.com/tachyonlabs/Todo-App-to-practice-for-the-Google-Associate-Android-Developer-Certification-Exam/blob/master/SettingsActivity.png "Settings Activity") &nbsp; &nbsp; ![Adding a new task](https://github.com/tachyonlabs/Todo-App-to-practice-for-the-Google-Associate-Android-Developer-Certification-Exam/blob/master/adding-a-new-task.png "Adding a new task") -->
 
