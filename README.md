@@ -13,8 +13,13 @@ A simple efficient solution for users to create, edit, delete **tasks** and **ha
 
 ## Screenshots
 
+<img src="https://github.com/Sarthak1812/TasksAndHabits/blob/master/photos/main_screen_light.png?raw=true" width="1620" />
 
 <!-- <img src="https://github.com/gheorghedarle/Xamarin-ToDoApp/blob/main/Screenshots/dark_mode.png?raw=true" Width="1620" /> -->
+
+## MAD Score
+![summary](/photos/mad_summary.png)
+![jetpack](/photos/mad_jetpack.png)
 
 
 ## 🔧 Built With
@@ -29,7 +34,7 @@ A simple efficient solution for users to create, edit, delete **tasks** and **ha
 ## Architecture
 Tasks&Habits is based on the MVVM architecture and the Repository pattern.
 
-![architecture](https://user-images.githubusercontent.com/24237865/77502018-f7d36000-6e9c-11ea-92b0-1097240c8689.png)
+![architecture]
 
 
 ## Resources
