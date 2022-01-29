@@ -7,24 +7,33 @@
     android:layout_height="match_parent"
     tools:context=".activity.MainActivity">
 
-    <Button
+
+    <ImageButton
         android:id="@+id/btn_cat_tasks"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tasks"
-        app:layout_constraintBottom_toBottomOf="@id/btn_cat_habits"
+        app:layout_constraintBottom_toTopOf="@id/btn_cat_habits"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/ic_bg_tasks_btn"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:contentDescription="Tasks Button" />
 
-    <Button
+
+
+
+
+    <ImageButton
         android:id="@+id/btn_cat_habits"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Habits"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@id/btn_cat_tasks" />
+        app:layout_constraintTop_toBottomOf="@id/btn_cat_tasks"
+        android:src="@drawable/ic_bg_habits_btn"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:contentDescription="Habits Button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
