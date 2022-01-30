@@ -12,7 +12,7 @@ A Task Management and Habit-building App, representating my journey in Android a
 ![Kotlin](https://img.shields.io/badge/kotlin-%230095D5.svg?style=for-the-badge&logo=kotlin&logoColor=white) 
 ![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
 
-A simple efficient solution for users to create, edit, delete **tasks** and **habits** and assign them colored task tags and and distinguisable habit images. The app is available in both light and  dark mode.
+A simple efficient solution for users to create, edit, delete **tasks** and **habits** and assign them colored task tags and and distinguishable  habit images. The app is available in both light and  dark mode.
 
 
 ## 📱 Screenshots
